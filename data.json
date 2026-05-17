@@ -1,5 +1,38 @@
 [
   {
+    "id": 2,
+    "date": "2026-05-15",
+    "team": "mkt",
+    "author": "Tố Trân",
+    "tasks": [
+      {
+        "tenTask": "Credential",
+        "pic": "Tố Trân",
+        "tienDo": "🟡 Đang làm — 50%",
+        "chiTiet": "Redesign hệ sinh thái Giải pháp PMAX và Hệ sinh thái đối tác",
+        "nextStep": "Tiếp tục làm",
+        "link": ""
+      },
+      {
+        "tenTask": "Content",
+        "pic": "Tuyết Vân",
+        "tienDo": "🟡 Đang làm — 50%",
+        "chiTiet": "Credential: PMAX CREDENTIAL | GENERAL \nWording & hỗ trợ submit Youtube awards\nCompleted MMA masterplan",
+        "nextStep": "Tiếp tục làm",
+        "link": ""
+      },
+      {
+        "tenTask": "Design",
+        "pic": "Minh Huy",
+        "tienDo": "🟡 Đang làm — 75%",
+        "chiTiet": "Credential design beautify slide -> 90%",
+        "nextStep": "Tiếp tục làm",
+        "link": ""
+      }
+    ],
+    "submitted": "2026-05-17T14:08:14.597Z"
+  },
+  {
     "id": 1,
     "date": "2026-05-17",
     "team": "bd",
