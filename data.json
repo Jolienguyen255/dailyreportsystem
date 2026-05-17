@@ -6,10 +6,27 @@
     "author": "Tố Trân",
     "tasks": [
       {
+        "tenTask": "Test",
+        "pic": "Tuyết Vân",
+        "tienDo": "🟡 Đang làm — 75%",
+        "chiTiet": "test",
+        "nextStep": "test",
+        "link": ""
+      }
+    ],
+    "submitted": "2026-05-17T14:31:16.503Z"
+  },
+  {
+    "id": 2,
+    "date": "2026-05-14",
+    "team": "mkt",
+    "author": "Tố Trân",
+    "tasks": [
+      {
         "tenTask": "Credential",
         "pic": "Tố Trân",
         "tienDo": "🟡 Đang làm — 50%",
-        "chiTiet": "Trân - Meeting vs a.Sơn, check wording câu từ mục giải pháp\nVân - https://docs.google.com/presentation/d/1fj9pBgc4y2ObNX29dX5B9sqLARUnoCHoCC80M-bWNVY/edit?slide=id.g3e16c05cc86_1_136#slide=id.g3e16c05cc86_1_136\nHuy - Design, update credential sau khi meeting với anh Sơn >> 75%",
+        "chiTiet": "Trân - Meeting vs a.Sơn, check wording câu từ mục giải pháp\nHuy - Design, update credential sau khi meeting với anh Sơn >> 75%",
         "nextStep": "Tiếp tục làm",
         "link": "https://docs.google.com/presentation/d/1fj9pBgc4y2ObNX29dX5B9sqLARUnoCHoCC80M-bWNVY/edit?slide=id.g3e16c05cc86_1_136#slide=id.g3e16c05cc86_1_136"
       },
@@ -49,7 +66,7 @@
     "submitted": "2026-05-17T14:20:47.693Z"
   },
   {
-    "id": 2,
+    "id": 1,
     "date": "2026-05-15",
     "team": "mkt",
     "author": "Tố Trân",
@@ -80,30 +97,5 @@
       }
     ],
     "submitted": "2026-05-17T14:08:14.597Z"
-  },
-  {
-    "id": 1,
-    "date": "2026-05-17",
-    "team": "bd",
-    "author": "Bảo Ngọc",
-    "tasks": [
-      {
-        "tenTask": "test1",
-        "pic": "Bảo Ngọc",
-        "tienDo": "🟠 Chờ phản hồi",
-        "chiTiet": "yyyy",
-        "nextStep": "uuuuu",
-        "link": "https://docs.google.com/spreadsheets/d/175pdgvYfCbkyJAEtvvAANI0VdSV0hLhZJK1PrAuBH2U/edit?gid="
-      },
-      {
-        "tenTask": "yty",
-        "pic": "Hoài My",
-        "tienDo": "🟡 Đang làm — 50%",
-        "chiTiet": "iii",
-        "nextStep": "ooo",
-        "link": "https://docs.google.com/spreadsheets/d/175pdgvYfCbkyJAEtvvAANI0VdSV0hLhZJK1PrAuBH2U/edit?gid=0#gid=0"
-      }
-    ],
-    "submitted": "2026-05-17T13:31:41.293Z"
   }
 ]
