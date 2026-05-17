@@ -1,5 +1,38 @@
 [
   {
+    "id": 5,
+    "date": "2026-05-15",
+    "team": "partnership",
+    "author": "Hữu Phát",
+    "tasks": [
+      {
+        "tenTask": "List Agency name cho các vertical trọng điểm",
+        "pic": "Hữu Phát",
+        "tienDo": "🟡 Đang làm — 50%",
+        "chiTiet": "Vẫn đang trong quá trình fill-in list & sắp xếp & priority cho nhánh Healthcare, Finance, Home",
+        "nextStep": "Gửi lại danh sách Hiệp hội/ Event cho anh Sơn review vào đầu tuần sau (18-19.05) để xem cần input thêm thông tin gì không\nNhờ anh Sơn review cho nội dung của nhánh Auto by T2 (18/5).  \nDone agency list & priority cho nhánh Healthcare, Finance, Home by T3 (19.5)",
+        "link": ""
+      },
+      {
+        "tenTask": "Partnership MOU",
+        "pic": "Minh Thư",
+        "tienDo": "🟡 Đang làm — 75%",
+        "chiTiet": "Đã communicate với các partner đã gửi MOU về các điểm bổ sung & process trình ký",
+        "nextStep": "Get final confirmation of partner by T3 (19/5) về MOU update\nFinalize MOU với T&A Ogilvy để trình ký (trước đó pending ví Finance của partner vịn lại)",
+        "link": ""
+      },
+      {
+        "tenTask": "Set up meeting Mr, Bình, Phong",
+        "pic": "Gia Bảo",
+        "tienDo": "🟡 Đang làm — 50%",
+        "chiTiet": "Sắp xếp lịch hẹn TCM - anh Bình (chairman), anh Phong (co-founder)\nĐã update tình hình với anh Sơn về status hiện tại giữa 2 team. Đã inform với anh Bình tentative tuần sau sẽ gặp mặt",
+        "nextStep": "Finalize hướng nội dung sẽ trao đổi TCM trong buổi 2nd meeting cùng các high level & trao đổi cùng anh Sơn vào T2 (18/5)",
+        "link": ""
+      }
+    ],
+    "submitted": "2026-05-17T16:18:00.220Z"
+  },
+  {
     "id": 4,
     "date": "2026-05-11",
     "team": "bd",
