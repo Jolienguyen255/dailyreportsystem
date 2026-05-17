@@ -1,5 +1,46 @@
 [
   {
+    "id": 6,
+    "date": "2026-05-14",
+    "team": "partnership",
+    "author": "Hữu Phát",
+    "tasks": [
+      {
+        "tenTask": "List Agency name cho các vertical trọng điểm",
+        "pic": "Gia Bảo",
+        "tienDo": "🟡 Đang làm — 75%",
+        "chiTiet": "Done agency list & priority cho nhánh Auto & Real Estate",
+        "nextStep": "Done agency list & priority cho nhánh Healthcare, Finance, Home by T6 (15.5)",
+        "link": ""
+      },
+      {
+        "tenTask": "Partnership MOU",
+        "pic": "Minh Thư",
+        "tienDo": "🟡 Đang làm — 50%",
+        "chiTiet": "Follow up với Legal team để nhận lại nội dung đã chỉnh sửa\n=> Status: Còn 1 số comment của Legal về phần Annex cần discuss thêm",
+        "nextStep": "Communicate với các partner đã gửi MOU về các điểm bổ sung & process trình ký",
+        "link": ""
+      },
+      {
+        "tenTask": "Meeting với LiveSpo Pharma",
+        "pic": "Minh Thư",
+        "tienDo": "🟢 Hoàn thành",
+        "chiTiet": "Meeting với LiveSpo Pharma để take brief >> đang collect thông tin brief và sẽ gửi lại recap meeting sau khi có đủ thông tin",
+        "nextStep": "Gửi lại meeting recap cho LiveSpo Pharma + next steps",
+        "link": ""
+      },
+      {
+        "tenTask": "1st version dev LOP cho Fisa",
+        "pic": "Hữu Phát",
+        "tienDo": "🟢 Hoàn thành",
+        "chiTiet": "1st version dev LOP cho Fisa (Phòng cháy chữa cháy) - các hạng mục PMAX sẽ thực hiện cho phần tư vấn MKT tổng thể >> Status: Đã có 1st version cần review lại ref team Strategy",
+        "nextStep": "",
+        "link": ""
+      }
+    ],
+    "submitted": "2026-05-17T16:21:12.194Z"
+  },
+  {
     "id": 5,
     "date": "2026-05-15",
     "team": "partnership",
