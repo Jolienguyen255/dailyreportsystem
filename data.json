@@ -1,5 +1,46 @@
 [
   {
+    "id": 7,
+    "date": "2026-05-11",
+    "team": "mkt",
+    "author": "Tố Trân",
+    "tasks": [
+      {
+        "tenTask": "Credential",
+        "pic": "Tố Trân",
+        "tienDo": "🟡 Đang làm — 25%",
+        "chiTiet": "Trân: Release timeline + workplan và asign task với team; Cross-check số lượng product/số lượng hiện có: Đã liên hệ anh Hạnh\nHuy: Design template credential general. ETA hoàn thành: 12h00 ngày 12/5\nTiến độ: 30%\nhttps://docs.google.com/presentation/d/1fj9pBgc4y2ObNX29dX5B9sqLARUnoCHoCC80M-bWNVY/edit?usp=sharing\nVân: Đang brief & thu thập thông tin case study\nTiến độ: 70%",
+        "nextStep": "Dự kiến nhận Ver1 vào ngày mai",
+        "link": "https://docs.google.com/spreadsheets/d/1XnOkRhnudbJKV_Ar-6Gi_nI5kkUncidVotGOgOmvujA/edit?gid=637341273#gid=637341273"
+      },
+      {
+        "tenTask": "PPW",
+        "pic": "Tố Trân",
+        "tienDo": "🟢 Hoàn thành",
+        "chiTiet": "Process thanh toán chi phí Meta Growth Summit",
+        "nextStep": "",
+        "link": ""
+      },
+      {
+        "tenTask": "Podcast social post",
+        "pic": "Tuyết Vân",
+        "tienDo": "🟡 Đang làm — 75%",
+        "chiTiet": "Đã hoàn thành 2 bài hôm nay\nTiến độ hiện tại: 8/12 bài",
+        "nextStep": "",
+        "link": ""
+      },
+      {
+        "tenTask": "Ebook Home",
+        "pic": "Tuyết Vân",
+        "tienDo": "🟢 Hoàn thành",
+        "chiTiet": "Đã hoàn thành 1 bài hôm nay\nTiến độ: 4/4 bài",
+        "nextStep": "",
+        "link": "https://docs.google.com/presentation/d/1l9SftfskcM_d2iZLeeDkCkDj7PPNdDVUszFBoUKAO4Y/edit?slide=id.g3e7e37c9d11_1_0#slide=id.g3e7e37c9d11_1_0"
+      }
+    ],
+    "submitted": "2026-05-17T16:46:21.310Z"
+  },
+  {
     "id": 6,
     "date": "2026-05-11",
     "team": "bd",
