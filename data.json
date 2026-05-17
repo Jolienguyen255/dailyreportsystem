@@ -1,5 +1,14 @@
 [
   {
+    "id": 10,
+    "date": "2026-05-11",
+    "team": "partnership",
+    "author": "Hữu Phát",
+    "done": "1. Kết quả công việc chính trong ngày: \n. Xây dựng được cơ bản master plan kèm data & tentative action cho tháng 5 tháng 6 \n. List down logic & danh sách Hiệp hội event & Partner agency đúng với direction theo vertical (Cross check lại data sẵn có)  PMAX_Partnership_Master_Plan_May-Jun_2026 \n. Follow up pending brief cases\n. Log activitites dashboard \n. Meeting với Legal team cho phần MOU process\n\n2. Các issue/blocker cần support (nếu có)\n. Case TP-link pending từ phía anh Trung cho phần submit báo giá (đã trễ deadline) \n. Follow up với MKT team về resource (human/budget/mkt plan 2026)",
+    "next": ". Finalize Master plan để trình bày cho anh Sơn \n. Finalize được procedure với Legal cho phần MOU \n. Lên ý tưởng prep kit cho Co-build product & co-branding acvitites với partner \n. Action Plan",
+    "submitted": "2026-05-17T12:34:14.651Z"
+  },
+  {
     "id": 9,
     "date": "2026-05-12",
     "team": "partnership",
