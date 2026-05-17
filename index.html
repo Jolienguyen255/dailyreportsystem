@@ -786,94 +786,102 @@
     </div>`;
   }
 
-  function renderDashboard() {
-    const date = document.getElementById('dash-date').value || todayStr();
-    document.getElementById('dash-date').value = date;
-
-    const day = reports.filter(r => r.date === date);
-    const reported = [...new Set(day.map(r => r.team))];
-    const ym = date.slice(0, 7), y = date.slice(0, 4);
-
-    document.getElementById('m-teams').innerHTML = reported.length + '<span>/3</span>';
-    document.getElementById('m-month').textContent = reports.filter(r => r.date.startsWith(ym)).length;
-    document.getElementById('m-year').textContent = reports.filter(r => r.date.startsWith(y)).length;
-    document.getElementById('m-total').textContent = reports.length;
-
-    const el = document.getElementById('dash-content');
-    const teams = ['mkt', 'partnership', 'bd'];
-
-    const activeTeam = window._activeTeam || 'all';
-    let statusHtml = `<div class="team-status-row">
-      <div class="status-item ${activeTeam === 'all' ? 'active-team' : ''}" onclick="filterTeam('all')">
-        <span style="color:var(--text2);flex:1">Tất cả</span>
-      </div>`;
-    teams.forEach(t => {
-      const done = reported.includes(t);
-      const isActive = activeTeam === t;
-      const onclick = done
-        ? `onclick="filterTeam('${t}')"`
-        : `onclick="showMissingPopup('${t}')"`;
-      statusHtml += `<div class="status-item ${done ? 'has-report' : 'no-report'} ${isActive ? 'active-team' : ''}" ${onclick}>
-        <span class="dot ${done ? 'dot-done' : 'dot-missing'}"></span>
-        <span style="color:${done ? 'var(--text2)' : 'var(--text3)'};flex:1">${teamLabel(t)}</span>
-      </div>`;
-    });
-    statusHtml += `</div>`;
-
-    if (day.length === 0) {
-      el.innerHTML = statusHtml + `<div class="empty"><div class="empty-icon">📭</div><div class="empty-text">Chưa có báo cáo nào cho ngày ${formatDate(date)}</div></div>`;
-      return;
-    }
-
-    const filterT = window._activeTeam || 'all';
-    let html = statusHtml;
-    teams.forEach((t, idx) => {
-      if (filterT !== 'all' && filterT !== t) return;
-      const reps = day.filter(r => r.team === t);
-      html += `<div class="team-section" id="team-section-${t}" style="animation-delay:${idx * 0.06}s">`;
-      if (reps.length === 0) {
-        html += `<div class="missing-card">
-          <div class="missing-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
-          <div><span class="team-badge badge-${t}">${teamLabel(t)}</span>&nbsp;&nbsp;Chưa có báo cáo cho ngày này</div>
-        </div>`;
-      } else {
-        reps.forEach(r => { html += renderReportCard(r, t); });
+  function mergeReports(reps) {
+  const merged = {};
+  reps.forEach(r => {
+    const key = r.date + '_' + r.team;
+    if (!merged[key]) {
+      merged[key] = { ...r, tasks: [...r.tasks] };
+    } else {
+      merged[key].tasks = [...merged[key].tasks, ...r.tasks];
+      // Giữ submitted mới nhất
+      if (r.submitted > merged[key].submitted) {
+        merged[key].submitted = r.submitted;
+        merged[key].author = r.author;
       }
-      html += '</div>';
-    });
-    el.innerHTML = html;
-  }
-
-  function renderHistory() {
-    const team = document.getElementById('hist-team').value;
-    const month = document.getElementById('hist-month').value;
-    let filtered = reports;
-    if (team !== 'all') filtered = filtered.filter(r => r.team === team);
-    if (month) filtered = filtered.filter(r => r.date.startsWith(month));
-
-    const el = document.getElementById('history-content');
-    if (filtered.length === 0) {
-      el.innerHTML = '<div class="empty"><div class="empty-icon">📂</div><div class="empty-text">Không có báo cáo nào</div></div>';
-      return;
     }
+  });
+  return Object.values(merged);
+}
 
-    const byDate = {};
-    filtered.forEach(r => { if (!byDate[r.date]) byDate[r.date] = []; byDate[r.date].push(r); });
-    const dates = Object.keys(byDate).sort((a, b) => b.localeCompare(a));
+function renderDashboard() {
+  const date = document.getElementById('dash-date').value || todayStr();
+  document.getElementById('dash-date').value = date;
 
-    let html = '';
-    dates.forEach(d => {
-      html += `<div class="day-group">
-        <div class="day-divider">
-          <span class="day-divider-date">${formatDate(d)}</span>
-          <div class="day-divider-line"></div>
-          <span class="day-divider-date">${byDate[d].length} báo cáo</span>
-        </div>`;
-      byDate[d].forEach(r => { html += renderReportCard(r, r.team); });
-      html += '</div>';
-    });
-    el.innerHTML = html;
+  const day = mergeReports(reports.filter(r => r.date === date));
+  const reported = [...new Set(day.map(r => r.team))];
+  const ym = date.slice(0, 7), y = date.slice(0, 4);
+
+  document.getElementById('m-teams').innerHTML = reported.length + '<span>/3</span>';
+  document.getElementById('m-month').textContent = reports.filter(r => r.date.startsWith(ym)).length;
+  document.getElementById('m-year').textContent = reports.filter(r => r.date.startsWith(y)).length;
+  document.getElementById('m-total').textContent = reports.length;
+
+  const el = document.getElementById('dash-content');
+  const teams = ['mkt', 'partnership', 'bd'];
+
+  let statusHtml = `<div class="team-status-row">`;
+  teams.forEach(t => {
+    const done = reported.includes(t);
+    statusHtml += `<div class="status-item"><span class="dot ${done ? 'dot-done' : 'dot-missing'}"></span><span style="color:${done ? 'var(--text2)' : 'var(--text3)'}">${teamLabel(t)}</span></div>`;
+  });
+  statusHtml += `</div>`;
+
+  if (day.length === 0) {
+    el.innerHTML = statusHtml + `<div class="empty"><div class="empty-icon">📭</div><div class="empty-text">Chưa có báo cáo nào cho ngày ${formatDate(date)}</div></div>`;
+    return;
   }
+
+  let html = statusHtml;
+  teams.forEach((t, idx) => {
+    const reps = day.filter(r => r.team === t);
+    html += `<div class="team-section" style="animation-delay:${idx * 0.06}s">`;
+    if (reps.length === 0) {
+      html += `<div class="missing-card">
+        <div class="missing-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+        <div><span class="team-badge badge-${t}">${teamLabel(t)}</span>&nbsp;&nbsp;Chưa có báo cáo cho ngày này</div>
+      </div>`;
+    } else {
+      reps.forEach(r => { html += renderReportCard(r, t); });
+    }
+    html += '</div>';
+  });
+  el.innerHTML = html;
+}
+
+function renderHistory() {
+  const team = document.getElementById('hist-team').value;
+  const month = document.getElementById('hist-month').value;
+  let filtered = reports;
+  if (team !== 'all') filtered = filtered.filter(r => r.team === team);
+  if (month) filtered = filtered.filter(r => r.date.startsWith(month));
+
+  // Gộp cùng team cùng ngày
+  filtered = mergeReports(filtered);
+
+  const el = document.getElementById('history-content');
+  if (filtered.length === 0) {
+    el.innerHTML = '<div class="empty"><div class="empty-icon">📂</div><div class="empty-text">Không có báo cáo nào</div></div>';
+    return;
+  }
+
+  const byDate = {};
+  filtered.forEach(r => { if (!byDate[r.date]) byDate[r.date] = []; byDate[r.date].push(r); });
+  const dates = Object.keys(byDate).sort((a, b) => b.localeCompare(a));
+
+  let html = '';
+  dates.forEach(d => {
+    html += `<div class="day-group">
+      <div class="day-divider">
+        <span class="day-divider-date">${formatDate(d)}</span>
+        <div class="day-divider-line"></div>
+        <span class="day-divider-date">${byDate[d].length} team</span>
+      </div>`;
+    byDate[d].forEach(r => { html += renderReportCard(r, r.team); });
+    html += '</div>';
+  });
+  el.innerHTML = html;
+}
 
   function filterTeam(team) {
     window._activeTeam = team;
