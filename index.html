@@ -29,567 +29,102 @@
     --radius: 12px;
     --radius-sm: 8px;
   }
-
   * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; line-height: 1.6; }
 
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    min-height: 100vh;
-    line-height: 1.6;
-  }
-
-  /* Top bar */
-  .topbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 18px 32px;
-    border-bottom: 1px solid var(--border);
-    position: sticky;
-    top: 0;
-    background: rgba(13,15,20,0.92);
-    backdrop-filter: blur(12px);
-    z-index: 100;
-  }
-
-  .logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .logo-mark {
-    width: 28px;
-    height: 28px;
-    background: var(--accent);
-    border-radius: 6px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
-    font-weight: 600;
-    color: #fff;
-    letter-spacing: -0.5px;
-  }
-
-  .logo-text {
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--text);
-    letter-spacing: 0.02em;
-  }
-
-  .logo-sub {
-    font-size: 12px;
-    color: var(--text3);
-    font-weight: 400;
-  }
-
-  .topbar-right {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .refresh-btn {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    padding: 7px 14px;
-    background: var(--bg3);
-    border: 1px solid var(--border2);
-    border-radius: var(--radius-sm);
-    color: var(--text2);
-    font-size: 13px;
-    font-family: 'DM Sans', sans-serif;
-    cursor: pointer;
-    transition: all 0.2s;
-  }
-  .refresh-btn:hover { background: var(--bg2); color: var(--text); border-color: rgba(255,255,255,0.2); }
+  .topbar { display: flex; align-items: center; justify-content: space-between; padding: 18px 32px; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: rgba(13,15,20,0.92); backdrop-filter: blur(12px); z-index: 100; }
+  .logo { display: flex; align-items: center; gap: 10px; }
+  .logo-mark { width: 28px; height: 28px; background: var(--accent); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; color: #fff; }
+  .logo-text { font-size: 14px; font-weight: 600; color: var(--text); }
+  .logo-sub { font-size: 12px; color: var(--text3); }
+  .topbar-right { display: flex; align-items: center; gap: 12px; }
+  .refresh-btn { display: flex; align-items: center; gap: 6px; padding: 7px 14px; background: var(--bg3); border: 1px solid var(--border2); border-radius: var(--radius-sm); color: var(--text2); font-size: 13px; font-family: 'DM Sans', sans-serif; cursor: pointer; transition: all 0.2s; }
+  .refresh-btn:hover { background: var(--bg2); color: var(--text); }
   .refresh-btn svg { width: 14px; height: 14px; }
+  .last-updated { font-size: 12px; color: var(--text3); font-family: 'DM Mono', monospace; }
 
-  .last-updated {
-    font-size: 12px;
-    color: var(--text3);
-    font-family: 'DM Mono', monospace;
-  }
+  .main { max-width: 980px; margin: 0 auto; padding: 36px 24px; }
 
-  /* Main layout */
-  .main {
-    max-width: 980px;
-    margin: 0 auto;
-    padding: 36px 24px;
-  }
-
-  /* Date selector */
-  .date-row {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 32px;
-  }
-
-  .date-label { font-size: 13px; color: var(--text2); }
-
-  .date-input {
-    background: var(--bg3);
-    border: 1px solid var(--border2);
-    border-radius: var(--radius-sm);
-    color: var(--text);
-    font-family: 'DM Mono', monospace;
-    font-size: 13px;
-    padding: 7px 12px;
-    outline: none;
-    cursor: pointer;
-    transition: border-color 0.2s;
-    color-scheme: dark;
-  }
-  .date-input:focus { border-color: var(--accent); }
-
-  .today-btn {
-    padding: 7px 14px;
-    background: transparent;
-    border: 1px solid var(--border2);
-    border-radius: var(--radius-sm);
-    color: var(--text2);
-    font-size: 13px;
-    font-family: 'DM Sans', sans-serif;
-    cursor: pointer;
-    transition: all 0.2s;
-  }
-  .today-btn:hover { color: var(--text); border-color: rgba(255,255,255,0.2); }
-
-  /* Metrics */
-  .metrics {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 12px;
-    margin-bottom: 32px;
-  }
-
-  .metric {
-    background: var(--bg2);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 18px 20px;
-    transition: border-color 0.2s;
-  }
-  .metric:hover { border-color: var(--border2); }
-
-  .metric-label {
-    font-size: 11px;
-    color: var(--text3);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    margin-bottom: 8px;
-  }
-
-  .metric-value {
-    font-size: 28px;
-    font-weight: 600;
-    color: var(--text);
-    line-height: 1;
-    font-family: 'DM Mono', monospace;
-  }
-
-  .metric-value span { font-size: 14px; color: var(--text3); font-weight: 400; }
-
-  /* Team nav buttons */
-  .team-status-row {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    margin-bottom: 28px;
-  }
-
-  .status-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 13px;
-    padding: 12px 16px;
-    background: var(--bg2);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    cursor: pointer;
-    transition: all 0.15s;
-    user-select: none;
-  }
-
-  .status-item.has-report:hover { border-color: var(--border2); background: var(--bg3); }
-  .status-item.active-team { border-color: var(--accent) !important; background: rgba(124,111,255,0.08) !important; color: var(--text) !important; opacity: 1 !important; }
-  .status-item.no-report { opacity: 0.4; cursor: default; }
-  .status-item.no-report:hover { opacity: 0.6; }
-
-  .dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    flex-shrink: 0;
-  }
-
-  .dot-done { background: var(--partner); box-shadow: 0 0 6px rgba(45,212,160,0.5); }
-  .dot-missing { background: var(--text3); }
-  .dot-mkt { background: var(--mkt); }
-  .dot-partner { background: var(--partner); }
-  .dot-bd { background: var(--bd); }
-
-  .status-sep { display: none; }
-
-  /* Popup */
-  .popup-overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.6);
-    z-index: 200;
-    align-items: center;
-    justify-content: center;
-  }
-  .popup-overlay.show { display: flex; }
-  .popup-box {
-    background: var(--bg2);
-    border: 1px solid var(--border2);
-    border-radius: var(--radius);
-    padding: 32px;
-    text-align: center;
-    max-width: 300px;
-    width: 90%;
-    animation: fadeUp 0.2s ease;
-  }
-  .popup-icon { font-size: 28px; margin-bottom: 12px; }
-  .popup-title { font-size: 15px; font-weight: 500; color: var(--text); margin-bottom: 6px; }
-  .popup-sub { font-size: 13px; color: var(--text3); margin-bottom: 20px; line-height: 1.6; }
-  .popup-close { padding: 8px 24px; background: var(--bg3); border: 1px solid var(--border2); border-radius: var(--radius-sm); color: var(--text2); font-size: 13px; font-family: 'DM Sans', sans-serif; cursor: pointer; transition: all 0.15s; }
-  .popup-close:hover { color: var(--text); border-color: rgba(255,255,255,0.2); }
-
-  /* Team report cards */
-  .team-section { margin-bottom: 20px; }
-
-  .team-card {
-    background: var(--bg2);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    overflow: hidden;
-    transition: border-color 0.2s;
-  }
-
-  .team-card.mkt { border-top: 2px solid var(--mkt); }
-  .team-card.partnership { border-top: 2px solid var(--partner); }
-  .team-card.bd { border-top: 2px solid var(--bd); }
-
-  .team-card-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 16px 20px;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .team-header-left {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .team-badge {
-    font-size: 11px;
-    font-weight: 600;
-    padding: 3px 10px;
-    border-radius: 20px;
-    letter-spacing: 0.04em;
-  }
-
-  .badge-mkt { background: var(--mkt-bg); color: var(--mkt); border: 1px solid var(--mkt-border); }
-  .badge-partnership { background: var(--partner-bg); color: var(--partner); border: 1px solid var(--partner-border); }
-  .badge-bd { background: var(--bd-bg); color: var(--bd); border: 1px solid var(--bd-border); }
-
-  .team-author { font-size: 13px; color: var(--text2); }
-
-  .team-time {
-    font-size: 12px;
-    color: var(--text3);
-    font-family: 'DM Mono', monospace;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-
-  .team-time::before {
-    content: '';
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--partner);
-    box-shadow: 0 0 5px rgba(45,212,160,0.4);
-  }
-
-  .team-card-body { padding: 20px; }
-
-  .report-section { margin-bottom: 18px; }
-  .report-section:last-child { margin-bottom: 0; }
-
-  .report-section-label {
-    font-size: 11px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--text3);
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-
-  .report-section-label::before {
-    content: '';
-    width: 3px;
-    height: 12px;
-    border-radius: 2px;
-  }
-
-  .label-done::before { background: var(--text2); }
-  .label-next::before { background: var(--accent); }
-
-  .task-card {
-    background: var(--bg3);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-sm);
-    padding: 12px 14px;
-    margin-bottom: 8px;
-  }
-  .task-card:last-child { margin-bottom: 0; }
-
-  .task-name {
-    font-size: 13.5px;
-    font-weight: 500;
-    color: var(--text);
-    margin-bottom: 8px;
-  }
-
-  .task-meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin-bottom: 6px;
-  }
-
-  .task-pill {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    font-size: 11.5px;
-    padding: 2px 8px;
-    border-radius: 20px;
-    border: 1px solid var(--border2);
-    color: var(--text2);
-    background: var(--bg2);
-  }
-
-  .task-pill-label {
-    color: var(--text3);
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-
-  .tiendo-tag {
-    font-size: 12px;
-    padding: 2px 10px;
-    border-radius: 20px;
-    font-weight: 500;
-  }
-
-  .task-detail {
-    font-size: 12.5px;
-    color: var(--text2);
-    line-height: 1.6;
-    margin-top: 6px;
-    padding-top: 6px;
-    border-top: 1px solid var(--border);
-  }
-
-  .task-nextstep {
-    font-size: 12px;
-    color: var(--accent);
-    margin-top: 4px;
-    display: flex;
-    align-items: flex-start;
-    gap: 5px;
-  }
-
-  .task-link {
-    font-size: 12px;
-    color: var(--accent);
-    text-decoration: none;
-    border-bottom: 1px solid rgba(124,111,255,0.3);
-    word-break: break-all;
-    margin-top: 4px;
-    display: inline-block;
-  }
-  .task-link:hover { border-bottom-color: var(--accent); }
-
-  /* Missing card */
-  .missing-card {
-    background: var(--bg2);
-    border: 1px dashed var(--border2);
-    border-radius: var(--radius);
-    padding: 24px 20px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    color: var(--text3);
-    font-size: 13px;
-  }
-
-  .missing-icon {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    background: var(--bg3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-
-  /* History tab */
-  .history-filters {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 24px;
-    flex-wrap: wrap;
-  }
-
-  .filter-select {
-    background: var(--bg3);
-    border: 1px solid var(--border2);
-    border-radius: var(--radius-sm);
-    color: var(--text);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 13px;
-    padding: 7px 12px;
-    outline: none;
-    cursor: pointer;
-    color-scheme: dark;
-  }
-
-  .day-group { margin-bottom: 28px; }
-
-  .day-divider {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 14px;
-  }
-
-  .day-divider-date {
-    font-size: 12px;
-    font-family: 'DM Mono', monospace;
-    color: var(--text3);
-    white-space: nowrap;
-  }
-
-  .day-divider-line { flex: 1; height: 1px; background: var(--border); }
-
-  /* Tabs */
-  .tabs {
-    display: flex;
-    gap: 4px;
-    margin-bottom: 28px;
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 0;
-  }
-
-  .tab-btn {
-    padding: 10px 18px;
-    background: none;
-    border: none;
-    border-bottom: 2px solid transparent;
-    color: var(--text3);
-    font-size: 13px;
-    font-family: 'DM Sans', sans-serif;
-    cursor: pointer;
-    transition: all 0.15s;
-    margin-bottom: -1px;
-    display: flex;
-    align-items: center;
-    gap: 7px;
-  }
-
+  .tabs { display: flex; gap: 4px; margin-bottom: 28px; border-bottom: 1px solid var(--border); }
+  .tab-btn { padding: 10px 18px; background: none; border: none; border-bottom: 2px solid transparent; color: var(--text3); font-size: 13px; font-family: 'DM Sans', sans-serif; cursor: pointer; transition: all 0.15s; margin-bottom: -1px; display: flex; align-items: center; gap: 7px; }
   .tab-btn.active { color: var(--text); border-bottom-color: var(--accent); }
   .tab-btn:hover:not(.active) { color: var(--text2); }
-
   .tab-icon { width: 14px; height: 14px; opacity: 0.7; }
-
   .view { display: none; }
   .view.active { display: block; }
 
-  /* Empty */
-  .empty {
-    text-align: center;
-    padding: 60px 20px;
-    color: var(--text3);
-  }
+  .date-row { display: flex; align-items: center; gap: 12px; margin-bottom: 32px; }
+  .date-label { font-size: 13px; color: var(--text2); }
+  .date-input { background: var(--bg3); border: 1px solid var(--border2); border-radius: var(--radius-sm); color: var(--text); font-family: 'DM Mono', monospace; font-size: 13px; padding: 7px 12px; outline: none; cursor: pointer; color-scheme: dark; }
+  .date-input:focus { border-color: var(--accent); }
+  .today-btn { padding: 7px 14px; background: transparent; border: 1px solid var(--border2); border-radius: var(--radius-sm); color: var(--text2); font-size: 13px; font-family: 'DM Sans', sans-serif; cursor: pointer; transition: all 0.2s; }
+  .today-btn:hover { color: var(--text); }
 
+  .metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 32px; }
+  .metric { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 20px; }
+  .metric-label { font-size: 11px; color: var(--text3); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; }
+  .metric-value { font-size: 28px; font-weight: 600; color: var(--text); line-height: 1; font-family: 'DM Mono', monospace; }
+  .metric-value span { font-size: 14px; color: var(--text3); font-weight: 400; }
+
+  /* Team filter buttons */
+  .team-nav { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 28px; }
+  .team-nav-btn { display: flex; align-items: center; gap: 8px; padding: 12px 16px; background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); cursor: pointer; font-size: 13px; color: var(--text2); font-family: 'DM Sans', sans-serif; transition: all 0.15s; }
+  .team-nav-btn:hover { border-color: var(--border2); background: var(--bg3); color: var(--text); }
+  .team-nav-btn.active { border-color: var(--accent); background: rgba(124,111,255,0.08); color: var(--text); }
+  .team-nav-btn.missing { opacity: 0.4; cursor: default; }
+  .team-nav-btn.missing:hover { opacity: 0.65; background: var(--bg2); border-color: var(--border); color: var(--text2); }
+  .dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+  .dot-on { background: var(--partner); box-shadow: 0 0 6px rgba(45,212,160,0.5); }
+  .dot-off { background: var(--text3); }
+
+  .team-section { margin-bottom: 20px; }
+  .team-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; animation: fadeUp 0.3s ease both; }
+  .team-card.mkt { border-top: 2px solid var(--mkt); }
+  .team-card.partnership { border-top: 2px solid var(--partner); }
+  .team-card.bd { border-top: 2px solid var(--bd); }
+  .team-card-header { display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; border-bottom: 1px solid var(--border); }
+  .team-header-left { display: flex; align-items: center; gap: 10px; }
+  .team-badge { font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 20px; letter-spacing: 0.04em; }
+  .badge-mkt { background: var(--mkt-bg); color: var(--mkt); border: 1px solid var(--mkt-border); }
+  .badge-partnership { background: var(--partner-bg); color: var(--partner); border: 1px solid var(--partner-border); }
+  .badge-bd { background: var(--bd-bg); color: var(--bd); border: 1px solid var(--bd-border); }
+  .team-author { font-size: 13px; color: var(--text2); }
+  .team-time { font-size: 12px; color: var(--text3); font-family: 'DM Mono', monospace; display: flex; align-items: center; gap: 6px; }
+  .team-time::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--partner); box-shadow: 0 0 5px rgba(45,212,160,0.4); }
+  .team-card-body { padding: 20px; }
+
+  .missing-card { background: var(--bg2); border: 1px dashed var(--border2); border-radius: var(--radius); padding: 24px 20px; display: flex; align-items: center; gap: 12px; color: var(--text3); font-size: 13px; }
+  .missing-icon { width: 32px; height: 32px; border-radius: 50%; background: var(--bg3); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+
+  .history-filters { display: flex; gap: 10px; margin-bottom: 24px; }
+  .filter-select { background: var(--bg3); border: 1px solid var(--border2); border-radius: var(--radius-sm); color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 13px; padding: 7px 12px; outline: none; cursor: pointer; color-scheme: dark; }
+  .day-group { margin-bottom: 28px; }
+  .day-divider { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+  .day-divider-date { font-size: 12px; font-family: 'DM Mono', monospace; color: var(--text3); white-space: nowrap; }
+  .day-divider-line { flex: 1; height: 1px; background: var(--border); }
+
+  .empty { text-align: center; padding: 60px 20px; color: var(--text3); }
   .empty-icon { font-size: 32px; margin-bottom: 12px; opacity: 0.4; }
   .empty-text { font-size: 14px; }
 
-  /* Toast */
-  .toast {
-    position: fixed;
-    bottom: 24px;
-    right: 24px;
-    background: var(--bg3);
-    border: 1px solid var(--border2);
-    color: var(--text);
-    padding: 12px 20px;
-    border-radius: var(--radius-sm);
-    font-size: 13px;
-    opacity: 0;
-    transform: translateY(8px);
-    transition: all 0.25s;
-    pointer-events: none;
-    z-index: 999;
-  }
+  .popup-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 200; align-items: center; justify-content: center; }
+  .popup-overlay.show { display: flex; }
+  .popup-box { background: var(--bg2); border: 1px solid var(--border2); border-radius: var(--radius); padding: 32px; text-align: center; max-width: 300px; width: 90%; animation: fadeUp 0.2s ease; }
+  .popup-icon { font-size: 28px; margin-bottom: 12px; }
+  .popup-title { font-size: 15px; font-weight: 500; color: var(--text); margin-bottom: 6px; }
+  .popup-sub { font-size: 13px; color: var(--text3); margin-bottom: 20px; line-height: 1.6; }
+  .popup-close { padding: 8px 24px; background: var(--bg3); border: 1px solid var(--border2); border-radius: var(--radius-sm); color: var(--text2); font-size: 13px; font-family: 'DM Sans', sans-serif; cursor: pointer; }
+  .popup-close:hover { color: var(--text); }
+
+  .toast { position: fixed; bottom: 24px; right: 24px; background: var(--bg3); border: 1px solid var(--border2); color: var(--text); padding: 12px 20px; border-radius: var(--radius-sm); font-size: 13px; opacity: 0; transform: translateY(8px); transition: all 0.25s; pointer-events: none; z-index: 999; }
   .toast.show { opacity: 1; transform: translateY(0); }
 
-  /* Loading */
-  .loading {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 60px;
-    gap: 10px;
-    color: var(--text3);
-    font-size: 13px;
-  }
-
-  .spinner {
-    width: 16px;
-    height: 16px;
-    border: 2px solid var(--border2);
-    border-top-color: var(--accent);
-    border-radius: 50%;
-    animation: spin 0.7s linear infinite;
-  }
+  .loading { display: flex; align-items: center; justify-content: center; padding: 60px; gap: 10px; color: var(--text3); font-size: 13px; }
+  .spinner { width: 16px; height: 16px; border: 2px solid var(--border2); border-top-color: var(--accent); border-radius: 50%; animation: spin 0.7s linear infinite; }
 
   @keyframes spin { to { transform: rotate(360deg); } }
-
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  .team-card { animation: fadeUp 0.3s ease both; }
-
-  @media (max-width: 640px) {
-    .metrics { grid-template-columns: repeat(2, 1fr); }
-    .topbar { padding: 14px 16px; }
-    .main { padding: 20px 16px; }
-  }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+  @media (max-width: 640px) { .metrics { grid-template-columns: repeat(2, 1fr); } .team-nav { grid-template-columns: repeat(2, 1fr); } .topbar { padding: 14px 16px; } .main { padding: 20px 16px; } }
 </style>
 </head>
 <body>
@@ -629,29 +164,13 @@
       <input type="date" class="date-input" id="dash-date" onchange="renderDashboard()" />
       <button class="today-btn" onclick="setToday()">Hôm nay</button>
     </div>
-
-    <div class="metrics" id="metrics-row">
-      <div class="metric">
-        <div class="metric-label">Teams đã báo cáo</div>
-        <div class="metric-value" id="m-teams">—</div>
-      </div>
-      <div class="metric">
-        <div class="metric-label">Báo cáo tháng này</div>
-        <div class="metric-value" id="m-month">—</div>
-      </div>
-      <div class="metric">
-        <div class="metric-label">Báo cáo năm nay</div>
-        <div class="metric-value" id="m-year">—</div>
-      </div>
-      <div class="metric">
-        <div class="metric-label">Tổng tất cả</div>
-        <div class="metric-value" id="m-total">—</div>
-      </div>
+    <div class="metrics">
+      <div class="metric"><div class="metric-label">Teams đã báo cáo</div><div class="metric-value" id="m-teams">—</div></div>
+      <div class="metric"><div class="metric-label">Báo cáo tháng này</div><div class="metric-value" id="m-month">—</div></div>
+      <div class="metric"><div class="metric-label">Báo cáo năm nay</div><div class="metric-value" id="m-year">—</div></div>
+      <div class="metric"><div class="metric-label">Tổng tất cả</div><div class="metric-value" id="m-total">—</div></div>
     </div>
-
-    <div id="dash-content">
-      <div class="loading"><div class="spinner"></div> Đang tải dữ liệu...</div>
-    </div>
+    <div id="dash-content"><div class="loading"><div class="spinner"></div> Đang tải dữ liệu...</div></div>
   </div>
 
   <div id="view-history" class="view">
@@ -664,13 +183,11 @@
       </select>
       <input type="month" class="filter-select" id="hist-month" onchange="renderHistory()" />
     </div>
-    <div id="history-content">
-      <div class="loading"><div class="spinner"></div> Đang tải dữ liệu...</div>
-    </div>
+    <div id="history-content"><div class="loading"><div class="spinner"></div> Đang tải dữ liệu...</div></div>
   </div>
 </div>
 
-<div class="popup-overlay" id="popup-overlay" onclick="closePopup(event)">
+<div class="popup-overlay" id="popup-overlay" onclick="if(event.target===this)this.classList.remove('show')">
   <div class="popup-box">
     <div class="popup-icon">📭</div>
     <div class="popup-title" id="popup-title">Chưa có báo cáo</div>
@@ -682,14 +199,14 @@
 <div class="toast" id="toast"></div>
 
 <script>
-  // ====================================================
-  // CẤU HÌNH — chỉ cần đổi URL này sau khi deploy
-  // ====================================================
-  const DATA_URL = './data.json';
-  // Nếu dùng raw GitHub: 'https://raw.githubusercontent.com/YOUR_USER/YOUR_REPO/main/data.json'
-  // ====================================================
+  // ==================================================
+  // ĐỔI URL NÀY SAU KHI DEPLOY
+  // ==================================================
+  const DATA_URL = 'https://raw.githubusercontent.com/Jolienguyen255/dailyreportsystem/main/data.json';
+  // ==================================================
 
   let reports = [];
+  let activeTeam = 'all';
 
   async function loadData() {
     try {
@@ -701,7 +218,6 @@
       renderHistory();
       showToast('Đã tải dữ liệu mới nhất');
     } catch (e) {
-      // fallback demo data
       reports = DEMO_DATA;
       document.getElementById('last-updated').textContent = 'Demo mode';
       renderDashboard();
@@ -710,30 +226,14 @@
   }
 
   function todayStr() { return new Date().toISOString().slice(0, 10); }
-
-  function setToday() {
-    document.getElementById('dash-date').value = todayStr();
-    renderDashboard();
-  }
-
-  function formatDate(d) {
-    const p = d.split('-');
-    return p[2] + '/' + p[1] + '/' + p[0];
-  }
-
-  function formatTime(iso) {
-    try {
-      const d = new Date(iso);
-      return d.toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit' });
-    } catch { return ''; }
-  }
-
+  function setToday() { document.getElementById('dash-date').value = todayStr(); renderDashboard(); }
+  function formatDate(d) { const p = d.split('-'); return p[2] + '/' + p[1] + '/' + p[0]; }
+  function formatTime(iso) { try { return new Date(iso).toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit' }); } catch { return ''; } }
   function switchTab(name) {
-    document.querySelectorAll('.tab-btn').forEach((b, i) => b.classList.toggle('active', ['dashboard', 'history'][i] === name));
+    document.querySelectorAll('.tab-btn').forEach((b, i) => b.classList.toggle('active', ['dashboard','history'][i] === name));
     document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
     document.getElementById('view-' + name).classList.add('active');
   }
-
   function teamLabel(t) { return { mkt: 'Team MKT', partnership: 'Team Partnership', bd: 'Team BD' }[t] || t; }
 
   function linkify(str) {
@@ -745,7 +245,7 @@
     if (!td) return 'var(--text3)';
     const s = td.toLowerCase();
     if (s.includes('xong') || s.includes('done') || s.includes('hoàn thành') || s.includes('100%')) return 'var(--partner)';
-    if (s.includes('chờ') || s.includes('pending') || s.includes('block')) return '#ff7c4d';
+    if (s.includes('chờ') || s.includes('pending') || s.includes('block')) return 'var(--bd)';
     return '#f5c542';
   }
 
@@ -753,24 +253,23 @@
     if (!tasks || tasks.length === 0) return '<div style="color:var(--text3);font-size:13px;padding:8px 0">Không có task</div>';
     return tasks.map((t, i) => `
       <div style="background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px 16px;margin-bottom:10px">
-        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:${(t.pic||t.chiTiet||t.nextStep||t.link)?'8px':'0'}">
           <div style="display:flex;align-items:center;gap:8px;flex:1">
             <span style="font-size:11px;font-family:'DM Mono',monospace;color:var(--text3);flex-shrink:0">${String(i+1).padStart(2,'0')}</span>
             <span style="font-size:14px;font-weight:500;color:var(--text)">${t.tenTask}</span>
           </div>
           ${t.tienDo ? `<span style="font-size:11px;font-weight:600;color:${tienDoColor(t.tienDo)};background:rgba(255,255,255,0.05);padding:3px 10px;border-radius:20px;white-space:nowrap;flex-shrink:0">${t.tienDo}</span>` : ''}
         </div>
-        <div style="display:flex;flex-wrap:wrap;gap:16px;font-size:12px;color:var(--text2)">
-          ${t.pic ? `<span><span style="color:var(--text3)">PIC </span>${t.pic}</span>` : ''}
-          ${t.chiTiet ? `<span style="flex-basis:100%;color:var(--text2)">${t.chiTiet}</span>` : ''}
-          ${t.nextStep ? `<span style="flex-basis:100%"><span style="color:var(--text3)">Next </span>${t.nextStep}</span>` : ''}
+        <div style="display:flex;flex-wrap:wrap;gap:8px;font-size:12px;color:var(--text2)">
+          ${t.pic ? `<span><span style="color:var(--text3)">PIC&nbsp;</span>${t.pic}</span>` : ''}
+          ${t.chiTiet ? `<span style="flex-basis:100%;color:var(--text2);line-height:1.6">${t.chiTiet}</span>` : ''}
+          ${t.nextStep ? `<span style="flex-basis:100%"><span style="color:var(--text3)">Next&nbsp;</span>${t.nextStep}</span>` : ''}
           ${t.link ? `<span style="flex-basis:100%">${linkify(t.link)}</span>` : ''}
         </div>
-      </div>
-    `).join('');
+      </div>`).join('');
   }
 
-  function renderReportCard(r, teamClass) {
+  function renderCard(r, teamClass) {
     return `<div class="team-card ${teamClass}">
       <div class="team-card-header">
         <div class="team-header-left">
@@ -780,72 +279,97 @@
         </div>
         <span class="team-time">Gửi lúc ${formatTime(r.submitted)}</span>
       </div>
-      <div class="team-card-body">
-        ${renderTaskList(r.tasks)}
-      </div>
+      <div class="team-card-body">${renderTaskList(r.tasks)}</div>
     </div>`;
+  }
+
+  function mergeByTeam(list) {
+    const map = {};
+    list.forEach(r => {
+      const key = r.date + '_' + r.team;
+      if (!map[key]) {
+        map[key] = { ...r, tasks: [...(r.tasks || [])] };
+      } else {
+        map[key].tasks = [...map[key].tasks, ...(r.tasks || [])];
+        if (r.submitted > map[key].submitted) {
+          map[key].submitted = r.submitted;
+          map[key].author = r.author;
+        }
+      }
+    });
+    return Object.values(map);
+  }
+
+  function filterTeam(team) {
+    activeTeam = team;
+    renderDashboard();
+  }
+
+  function showMissingPopup(team) {
+    document.getElementById('popup-title').textContent = teamLabel(team) + ' chưa báo cáo';
+    document.getElementById('popup-sub').textContent = 'Team này chưa nộp báo cáo cho ngày đang xem. Nhắc leader điền form nha!';
+    document.getElementById('popup-overlay').classList.add('show');
   }
 
   function renderDashboard() {
     const date = document.getElementById('dash-date').value || todayStr();
     document.getElementById('dash-date').value = date;
 
-    const day = mergeReports(reports.filter(r => r.date === date));
-    const reported = [...new Set(day.map(r => r.team))];
+    const day = mergeByTeam(reports.filter(r => r.date === date));
+    const reported = day.map(r => r.team);
     const ym = date.slice(0, 7), y = date.slice(0, 4);
-    const activeTeam = window._activeTeam || 'all';
 
     document.getElementById('m-teams').innerHTML = reported.length + '<span>/3</span>';
     document.getElementById('m-month').textContent = reports.filter(r => r.date.startsWith(ym)).length;
     document.getElementById('m-year').textContent = reports.filter(r => r.date.startsWith(y)).length;
     document.getElementById('m-total').textContent = reports.length;
 
-    const el = document.getElementById('dash-content');
     const teams = ['mkt', 'partnership', 'bd'];
+    const el = document.getElementById('dash-content');
 
-    let statusHtml = `<div class="team-status-row">
-      <div class="status-item ${activeTeam === 'all' ? 'active-team' : ''}" onclick="filterTeam('all')">
-        <span style="color:var(--text2);flex:1">Tất cả</span>
-      </div>`;
+    // Build nav buttons
+    let nav = '<div class="team-nav">';
+    nav += `<button class="team-nav-btn ${activeTeam === 'all' ? 'active' : ''}" onclick="filterTeam('all')">Tất cả</button>`;
     teams.forEach(t => {
-      const done = reported.includes(t);
+      const hasDone = reported.includes(t);
       const isActive = activeTeam === t;
-      const onclick = done ? `onclick="filterTeam('${t}')"` : `onclick="showMissingPopup('${t}')"`;
-      statusHtml += `<div class="status-item ${done ? 'has-report' : 'no-report'} ${isActive ? 'active-team' : ''}" ${onclick}>
-        <span class="dot ${done ? 'dot-done' : 'dot-missing'}"></span>
-        <span style="color:${done ? 'var(--text2)' : 'var(--text3)'};flex:1">${teamLabel(t)}</span>
-      </div>`;
+      const clickFn = hasDone ? `filterTeam('${t}')` : `showMissingPopup('${t}')`;
+      nav += `<button class="team-nav-btn ${isActive ? 'active' : ''} ${hasDone ? '' : 'missing'}" onclick="${clickFn}">
+        <span class="dot ${hasDone ? 'dot-on' : 'dot-off'}"></span>${teamLabel(t)}
+      </button>`;
     });
-    statusHtml += '</div>';
+    nav += '</div>';
 
     if (day.length === 0) {
-      el.innerHTML = statusHtml + `<div class="empty"><div class="empty-icon">📭</div><div class="empty-text">Chưa có báo cáo nào cho ngày ${formatDate(date)}</div></div>`;
+      el.innerHTML = nav + `<div class="empty"><div class="empty-icon">📭</div><div class="empty-text">Chưa có báo cáo nào cho ngày ${formatDate(date)}</div></div>`;
       return;
     }
 
-    let html = statusHtml;
-    teams.forEach((t, idx) => {
+    let html = nav;
+    teams.forEach(t => {
       if (activeTeam !== 'all' && activeTeam !== t) return;
-      const reps = day.filter(r => r.team === t);
-      html += `<div class="team-section" id="team-section-${t}" style="animation-delay:${idx * 0.06}s">`;
-      if (reps.length === 0) {
-        html += `<div class="missing-card">
-          <div class="missing-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
-          <div><span class="team-badge badge-${t}">${teamLabel(t)}</span>&nbsp;&nbsp;Chưa có báo cáo cho ngày này</div>
-        </div>`;
+      const rep = day.find(r => r.team === t);
+      if (!rep) {
+        if (activeTeam === 'all') {
+          html += `<div class="team-section"><div class="missing-card">
+            <div class="missing-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+            <div><span class="team-badge badge-${t}">${teamLabel(t)}</span>&nbsp;&nbsp;Chưa có báo cáo</div>
+          </div></div>`;
+        }
       } else {
-        reps.forEach(r => { html += renderReportCard(r, t); });
+        html += `<div class="team-section">${renderCard(rep, t)}</div>`;
       }
-      html += '</div>';
     });
     el.innerHTML = html;
   }
+
   function renderHistory() {
     const team = document.getElementById('hist-team').value;
     const month = document.getElementById('hist-month').value;
     let filtered = reports;
     if (team !== 'all') filtered = filtered.filter(r => r.team === team);
     if (month) filtered = filtered.filter(r => r.date.startsWith(month));
+    filtered = mergeByTeam(filtered);
 
     const el = document.getElementById('history-content');
     if (filtered.length === 0) {
@@ -859,34 +383,15 @@
 
     let html = '';
     dates.forEach(d => {
-      html += `<div class="day-group">
-        <div class="day-divider">
-          <span class="day-divider-date">${formatDate(d)}</span>
-          <div class="day-divider-line"></div>
-          <span class="day-divider-date">${byDate[d].length} báo cáo</span>
-        </div>`;
-      byDate[d].forEach(r => { html += renderReportCard(r, r.team); });
+      html += `<div class="day-group"><div class="day-divider">
+        <span class="day-divider-date">${formatDate(d)}</span>
+        <div class="day-divider-line"></div>
+        <span class="day-divider-date">${byDate[d].length} team</span>
+      </div>`;
+      byDate[d].forEach(r => { html += renderCard(r, r.team); });
       html += '</div>';
     });
     el.innerHTML = html;
-  }
-
-  function filterTeam(team) {
-    window._activeTeam = team;
-    renderDashboard();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
-  function showMissingPopup(team) {
-    document.getElementById('popup-title').textContent = teamLabel(team) + ' chưa báo cáo';
-    document.getElementById('popup-sub').textContent = 'Team này chưa nộp báo cáo cho ngày đang xem. Hãy nhắc leader điền form nha!';
-    document.getElementById('popup-overlay').classList.add('show');
-  }
-
-  function closePopup(e) {
-    if (e.target === document.getElementById('popup-overlay')) {
-      document.getElementById('popup-overlay').classList.remove('show');
-    }
   }
 
   function showToast(msg) {
@@ -896,34 +401,26 @@
     setTimeout(() => t.classList.remove('show'), 2500);
   }
 
-  // Demo fallback data
   const DEMO_DATA = [
     { id: 1, date: new Date().toISOString().slice(0,10), team: 'mkt', author: 'Trân + Vân + Huy', submitted: new Date().toISOString(), tasks: [
-      { tenTask: 'Credential deck', pic: 'Trân', tienDo: '🔄 Đang làm', chiTiet: 'Meeting với a.Sơn, check wording câu từ mục giải pháp', nextStep: 'Finalize sau feedback a.Sơn', link: '' },
+      { tenTask: 'Credential deck', pic: 'Trân', tienDo: '🔄 Đang làm — 50%', chiTiet: 'Meeting với a.Sơn, check wording câu từ mục giải pháp', nextStep: 'Finalize sau feedback a.Sơn', link: '' },
       { tenTask: 'Meeting Pinpoint', pic: 'Trân', tienDo: '✅ Xong', chiTiet: 'Align về cơ chế share brief', nextStep: 'MKT 2 bên propose và process tiếp', link: '' },
-      { tenTask: 'MMA awards masterplan', pic: 'Vân', tienDo: '✅ Xong', chiTiet: 'Cập nhật masterplan 2026', nextStep: '', link: 'https://docs.google.com/spreadsheets/d/1M7QqMHJD' },
-      { tenTask: 'Design credential', pic: 'Huy', tienDo: '🔄 75%', chiTiet: 'Update sau meeting a.Sơn', nextStep: 'Hoàn thiện phần còn lại', link: '' },
+      { tenTask: 'MMA awards masterplan', pic: 'Vân', tienDo: '✅ Xong', chiTiet: 'Cập nhật masterplan 2026', nextStep: '', link: 'https://docs.google.com' },
     ]},
     { id: 2, date: new Date().toISOString().slice(0,10), team: 'partnership', author: 'Thúy Hà', submitted: new Date().toISOString(), tasks: [
-      { tenTask: 'Agency list theo vertical', pic: 'Thúy Hà', tienDo: '🔄 Đang làm', chiTiet: 'Đang fill-in contact & sắp xếp thứ tự ưu tiên', nextStep: 'Done by T5 (14.5)', link: '' },
-      { tenTask: 'Partnership MOU', pic: 'Thúy Hà', tienDo: '✅ Done review', chiTiet: 'Follow up Legal team — đã nhận lại nội dung chỉnh sửa', nextStep: 'Gửi finalized MOU cho partner', link: '' },
-      { tenTask: 'Brief LiveSpo Pharma', pic: 'Thúy Hà', tienDo: '🔄 Đang làm', chiTiet: 'Call cùng Trân MKT với a.Trường PIC để nắm thông tin', nextStep: 'Meeting ngày mai để take brief', link: '' },
+      { tenTask: 'Agency list theo vertical', pic: 'Thúy Hà', tienDo: '🔄 Đang làm', chiTiet: 'Đang fill-in contact & sắp xếp thứ tự ưu tiên', nextStep: 'Done by T5', link: '' },
+      { tenTask: 'Partnership MOU', pic: 'Thúy Hà', tienDo: '✅ Done review', chiTiet: 'Follow up Legal team', nextStep: 'Gửi finalized MOU', link: '' },
     ]},
     { id: 3, date: new Date().toISOString().slice(0,10), team: 'bd', author: 'Ngọc + Đại', submitted: new Date().toISOString(), tasks: [
-      { tenTask: 'Chaebol approach list', pic: 'Ngọc + Đại', tienDo: '✅ Done', chiTiet: 'Final list chaebol approach trong tuần', nextStep: 'Cần a.Sơn give insight thêm', link: 'https://docs.google.com/spreadsheets/d/175pdgvY' },
-      { tenTask: 'Vifon — Quotation', pic: 'Ngọc', tienDo: '🔄 Đàm phán', chiTiet: 'Họp đàm phán giá round cuối', nextStep: 'Chốt giá và gửi QS chính thức', link: '' },
-      { tenTask: 'Zeiss — Brief', pic: 'Đại', tienDo: '✅ Xong', chiTiet: 'Họp clarify brief với khách hàng', nextStep: 'Làm proposal', link: '' },
-      { tenTask: 'NovaGroup — NDA', pic: 'Ngọc', tienDo: '⏳ Chờ KH', chiTiet: 'Follow up NDA process từ phía khách hàng', nextStep: 'Chờ KH phản hồi', link: '' },
+      { tenTask: 'Vifon — Quotation', pic: 'Ngọc', tienDo: '🔄 Đàm phán', chiTiet: 'Họp đàm phán giá round cuối', nextStep: 'Chốt giá và gửi QS', link: '' },
+      { tenTask: 'NovaGroup — NDA', pic: 'Ngọc', tienDo: '⏳ Chờ KH', chiTiet: 'Follow up NDA process', nextStep: 'Chờ KH phản hồi', link: '' },
     ]},
   ];
 
-  // Init
   document.getElementById('dash-date').value = todayStr();
   document.getElementById('hist-month').value = todayStr().slice(0, 7);
   loadData();
-
-  // Auto-refresh mỗi 20 giây
-  setInterval(loadData, 20 * 1000);
+  setInterval(loadData, 30 * 1000);
 </script>
 </body>
 </html>
