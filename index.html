@@ -196,25 +196,32 @@
 
   .metric-value span { font-size: 14px; color: var(--text3); font-weight: 400; }
 
-  /* Progress dots */
+  /* Team nav buttons */
   .team-status-row {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
     margin-bottom: 28px;
-    padding: 14px 18px;
-    background: var(--bg2);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
   }
 
   .status-item {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
     font-size: 13px;
-    margin-right: 12px;
+    padding: 12px 16px;
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: all 0.15s;
+    user-select: none;
   }
+
+  .status-item.has-report:hover { border-color: var(--border2); background: var(--bg3); }
+  .status-item.active-team { border-color: var(--accent) !important; background: rgba(124,111,255,0.08) !important; color: var(--text) !important; opacity: 1 !important; }
+  .status-item.no-report { opacity: 0.4; cursor: default; }
+  .status-item.no-report:hover { opacity: 0.6; }
 
   .dot {
     width: 8px;
@@ -229,7 +236,34 @@
   .dot-partner { background: var(--partner); }
   .dot-bd { background: var(--bd); }
 
-  .status-sep { width: 1px; height: 16px; background: var(--border); margin: 0 8px; }
+  .status-sep { display: none; }
+
+  /* Popup */
+  .popup-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: 200;
+    align-items: center;
+    justify-content: center;
+  }
+  .popup-overlay.show { display: flex; }
+  .popup-box {
+    background: var(--bg2);
+    border: 1px solid var(--border2);
+    border-radius: var(--radius);
+    padding: 32px;
+    text-align: center;
+    max-width: 300px;
+    width: 90%;
+    animation: fadeUp 0.2s ease;
+  }
+  .popup-icon { font-size: 28px; margin-bottom: 12px; }
+  .popup-title { font-size: 15px; font-weight: 500; color: var(--text); margin-bottom: 6px; }
+  .popup-sub { font-size: 13px; color: var(--text3); margin-bottom: 20px; line-height: 1.6; }
+  .popup-close { padding: 8px 24px; background: var(--bg3); border: 1px solid var(--border2); border-radius: var(--radius-sm); color: var(--text2); font-size: 13px; font-family: 'DM Sans', sans-serif; cursor: pointer; transition: all 0.15s; }
+  .popup-close:hover { color: var(--text); border-color: rgba(255,255,255,0.2); }
 
   /* Team report cards */
   .team-section { margin-bottom: 20px; }
@@ -636,13 +670,22 @@
   </div>
 </div>
 
+<div class="popup-overlay" id="popup-overlay" onclick="closePopup(event)">
+  <div class="popup-box">
+    <div class="popup-icon">📭</div>
+    <div class="popup-title" id="popup-title">Chưa có báo cáo</div>
+    <div class="popup-sub" id="popup-sub">Team này chưa nộp báo cáo hôm nay.</div>
+    <button class="popup-close" onclick="document.getElementById('popup-overlay').classList.remove('show')">Đóng</button>
+  </div>
+</div>
+
 <div class="toast" id="toast"></div>
 
 <script>
   // ====================================================
   // CẤU HÌNH — chỉ cần đổi URL này sau khi deploy
   // ====================================================
-  const DATA_URL = 'https://raw.githubusercontent.com/Jolienguyen255/dailyreportsystem/main/data.json';
+  const DATA_URL = './data.json';
   // Nếu dùng raw GitHub: 'https://raw.githubusercontent.com/YOUR_USER/YOUR_REPO/main/data.json'
   // ====================================================
 
@@ -743,102 +786,113 @@
     </div>`;
   }
 
-  function mergeReports(reps) {
-  const merged = {};
-  reps.forEach(r => {
-    const key = r.date + '_' + r.team;
-    if (!merged[key]) {
-      merged[key] = { ...r, tasks: [...r.tasks] };
-    } else {
-      merged[key].tasks = [...merged[key].tasks, ...r.tasks];
-      // Giữ submitted mới nhất
-      if (r.submitted > merged[key].submitted) {
-        merged[key].submitted = r.submitted;
-        merged[key].author = r.author;
+  function renderDashboard() {
+    const date = document.getElementById('dash-date').value || todayStr();
+    document.getElementById('dash-date').value = date;
+
+    const day = reports.filter(r => r.date === date);
+    const reported = [...new Set(day.map(r => r.team))];
+    const ym = date.slice(0, 7), y = date.slice(0, 4);
+
+    document.getElementById('m-teams').innerHTML = reported.length + '<span>/3</span>';
+    document.getElementById('m-month').textContent = reports.filter(r => r.date.startsWith(ym)).length;
+    document.getElementById('m-year').textContent = reports.filter(r => r.date.startsWith(y)).length;
+    document.getElementById('m-total').textContent = reports.length;
+
+    const el = document.getElementById('dash-content');
+    const teams = ['mkt', 'partnership', 'bd'];
+
+    const activeTeam = window._activeTeam || 'all';
+    let statusHtml = `<div class="team-status-row">
+      <div class="status-item ${activeTeam === 'all' ? 'active-team' : ''}" onclick="filterTeam('all')">
+        <span style="color:var(--text2);flex:1">Tất cả</span>
+      </div>`;
+    teams.forEach(t => {
+      const done = reported.includes(t);
+      const isActive = activeTeam === t;
+      const onclick = done
+        ? `onclick="filterTeam('${t}')"`
+        : `onclick="showMissingPopup('${t}')"`;
+      statusHtml += `<div class="status-item ${done ? 'has-report' : 'no-report'} ${isActive ? 'active-team' : ''}" ${onclick}>
+        <span class="dot ${done ? 'dot-done' : 'dot-missing'}"></span>
+        <span style="color:${done ? 'var(--text2)' : 'var(--text3)'};flex:1">${teamLabel(t)}</span>
+      </div>`;
+    });
+    statusHtml += `</div>`;
+
+    if (day.length === 0) {
+      el.innerHTML = statusHtml + `<div class="empty"><div class="empty-icon">📭</div><div class="empty-text">Chưa có báo cáo nào cho ngày ${formatDate(date)}</div></div>`;
+      return;
+    }
+
+    const filterT = window._activeTeam || 'all';
+    let html = statusHtml;
+    teams.forEach((t, idx) => {
+      if (filterT !== 'all' && filterT !== t) return;
+      const reps = day.filter(r => r.team === t);
+      html += `<div class="team-section" id="team-section-${t}" style="animation-delay:${idx * 0.06}s">`;
+      if (reps.length === 0) {
+        html += `<div class="missing-card">
+          <div class="missing-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+          <div><span class="team-badge badge-${t}">${teamLabel(t)}</span>&nbsp;&nbsp;Chưa có báo cáo cho ngày này</div>
+        </div>`;
+      } else {
+        reps.forEach(r => { html += renderReportCard(r, t); });
       }
-    }
-  });
-  return Object.values(merged);
-}
-
-function renderDashboard() {
-  const date = document.getElementById('dash-date').value || todayStr();
-  document.getElementById('dash-date').value = date;
-
-  const day = mergeReports(reports.filter(r => r.date === date));
-  const reported = [...new Set(day.map(r => r.team))];
-  const ym = date.slice(0, 7), y = date.slice(0, 4);
-
-  document.getElementById('m-teams').innerHTML = reported.length + '<span>/3</span>';
-  document.getElementById('m-month').textContent = reports.filter(r => r.date.startsWith(ym)).length;
-  document.getElementById('m-year').textContent = reports.filter(r => r.date.startsWith(y)).length;
-  document.getElementById('m-total').textContent = reports.length;
-
-  const el = document.getElementById('dash-content');
-  const teams = ['mkt', 'partnership', 'bd'];
-
-  let statusHtml = `<div class="team-status-row">`;
-  teams.forEach(t => {
-    const done = reported.includes(t);
-    statusHtml += `<div class="status-item"><span class="dot ${done ? 'dot-done' : 'dot-missing'}"></span><span style="color:${done ? 'var(--text2)' : 'var(--text3)'}">${teamLabel(t)}</span></div>`;
-  });
-  statusHtml += `</div>`;
-
-  if (day.length === 0) {
-    el.innerHTML = statusHtml + `<div class="empty"><div class="empty-icon">📭</div><div class="empty-text">Chưa có báo cáo nào cho ngày ${formatDate(date)}</div></div>`;
-    return;
+      html += '</div>';
+    });
+    el.innerHTML = html;
   }
 
-  let html = statusHtml;
-  teams.forEach((t, idx) => {
-    const reps = day.filter(r => r.team === t);
-    html += `<div class="team-section" style="animation-delay:${idx * 0.06}s">`;
-    if (reps.length === 0) {
-      html += `<div class="missing-card">
-        <div class="missing-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
-        <div><span class="team-badge badge-${t}">${teamLabel(t)}</span>&nbsp;&nbsp;Chưa có báo cáo cho ngày này</div>
-      </div>`;
-    } else {
-      reps.forEach(r => { html += renderReportCard(r, t); });
+  function renderHistory() {
+    const team = document.getElementById('hist-team').value;
+    const month = document.getElementById('hist-month').value;
+    let filtered = reports;
+    if (team !== 'all') filtered = filtered.filter(r => r.team === team);
+    if (month) filtered = filtered.filter(r => r.date.startsWith(month));
+
+    const el = document.getElementById('history-content');
+    if (filtered.length === 0) {
+      el.innerHTML = '<div class="empty"><div class="empty-icon">📂</div><div class="empty-text">Không có báo cáo nào</div></div>';
+      return;
     }
-    html += '</div>';
-  });
-  el.innerHTML = html;
-}
 
-function renderHistory() {
-  const team = document.getElementById('hist-team').value;
-  const month = document.getElementById('hist-month').value;
-  let filtered = reports;
-  if (team !== 'all') filtered = filtered.filter(r => r.team === team);
-  if (month) filtered = filtered.filter(r => r.date.startsWith(month));
+    const byDate = {};
+    filtered.forEach(r => { if (!byDate[r.date]) byDate[r.date] = []; byDate[r.date].push(r); });
+    const dates = Object.keys(byDate).sort((a, b) => b.localeCompare(a));
 
-  // Gộp cùng team cùng ngày
-  filtered = mergeReports(filtered);
-
-  const el = document.getElementById('history-content');
-  if (filtered.length === 0) {
-    el.innerHTML = '<div class="empty"><div class="empty-icon">📂</div><div class="empty-text">Không có báo cáo nào</div></div>';
-    return;
+    let html = '';
+    dates.forEach(d => {
+      html += `<div class="day-group">
+        <div class="day-divider">
+          <span class="day-divider-date">${formatDate(d)}</span>
+          <div class="day-divider-line"></div>
+          <span class="day-divider-date">${byDate[d].length} báo cáo</span>
+        </div>`;
+      byDate[d].forEach(r => { html += renderReportCard(r, r.team); });
+      html += '</div>';
+    });
+    el.innerHTML = html;
   }
 
-  const byDate = {};
-  filtered.forEach(r => { if (!byDate[r.date]) byDate[r.date] = []; byDate[r.date].push(r); });
-  const dates = Object.keys(byDate).sort((a, b) => b.localeCompare(a));
+  function filterTeam(team) {
+    window._activeTeam = team;
+    renderDashboard();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 
-  let html = '';
-  dates.forEach(d => {
-    html += `<div class="day-group">
-      <div class="day-divider">
-        <span class="day-divider-date">${formatDate(d)}</span>
-        <div class="day-divider-line"></div>
-        <span class="day-divider-date">${byDate[d].length} team</span>
-      </div>`;
-    byDate[d].forEach(r => { html += renderReportCard(r, r.team); });
-    html += '</div>';
-  });
-  el.innerHTML = html;
-}
+  function showMissingPopup(team) {
+    document.getElementById('popup-title').textContent = teamLabel(team) + ' chưa báo cáo';
+    document.getElementById('popup-sub').textContent = 'Team này chưa nộp báo cáo cho ngày đang xem. Hãy nhắc leader điền form nha!';
+    document.getElementById('popup-overlay').classList.add('show');
+  }
+
+  function closePopup(e) {
+    if (e.target === document.getElementById('popup-overlay')) {
+      document.getElementById('popup-overlay').classList.remove('show');
+    }
+  }
+
   function showToast(msg) {
     const t = document.getElementById('toast');
     t.textContent = msg;
