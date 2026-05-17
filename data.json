@@ -1,5 +1,14 @@
 [
   {
+    "id": 11,
+    "date": "2026-05-11",
+    "team": "bd",
+    "author": "Bảo Ngọc",
+    "done": "Final list chaebol approach trong tuần: BD Team - List Enterprise/ Chaebol  >>> Cần anh Sơn give insight thêm trong quá trình approach.\nAlign SOP với MKT Team: Next step MKT dev SOP và align với BD\nChốt Product ship: 1 workflow from Claude (OKR)\nPipeline - Brief >> QS\nVifon - QS: Họp đàm phán giá round cuối\nZeiss - Brief: Họp clarify brief với khách hàng\nThaco - Brief: Họp internal điều phối làm proposal\nNovaGroup - NDA process: Follow up NDA process từ phía khách hàng",
+    "next": "Team BD tiếp tục action trên nhóm Chaebol.\nNgọc + Đại: Chốt SOP pod assignment, điền GP2 với anh Sơn.",
+    "submitted": "2026-05-17T12:38:06.721Z"
+  },
+  {
     "id": 10,
     "date": "2026-05-11",
     "team": "partnership",
