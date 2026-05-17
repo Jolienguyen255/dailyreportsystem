@@ -852,8 +852,8 @@
   document.getElementById('hist-month').value = todayStr().slice(0, 7);
   loadData();
 
-  // Auto-refresh mỗi 5 phút
-  setInterval(loadData, 5 * 60 * 1000);
+  // Auto-refresh mỗi 20 giây
+  setInterval(loadData, 20 * 1000);
 </script>
 </body>
 </html>
