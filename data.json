@@ -1,1 +1,11 @@
-[]
+[
+  {
+    "id": 1,
+    "date": "Thu May 14 2026 00:00:00 GMT+0700 (Indochina Time)",
+    "team": "partnership",
+    "author": "Hữu Phát",
+    "done": "List Agency name cho các vertical trọng điểm \n=> Status: Done agency list & priority cho nhánh Auto & Real Estate \nPartnership MOU - Follow up với Legal team để nhận lại nội dung đã chỉnh sửa\n=> Status: Còn 1 số comment của Legal về phần Annex cần discuss thêm\nMeeting với LiveSpo Pharma để take brief >> đang collect thông tin brief và sẽ gửi lại recap meeting sau khi có đủ thông tin\n1st version dev LOP cho Fisa (Phòng cháy chữa cháy) - các hạng mục PMAX sẽ thực hiện cho phần tư vấn MKT tổng thể >> Status: Đã có 1st version cần review lại ref team Strategy \nMOU Dinosaur reviewed trình ký >> Status: Đã align xong các điều khoản với external",
+    "next": "Done agency list & priority cho nhánh Healthcare, Finance, Home by T6 (15.5)\nCommunicate với các partner đã gửi MOU về các điểm bổ sung & process trình ký\nGửi lại meeting recap cho LiveSpo Pharma + next steps \nTrình ký MOU Dinosaur \nReviewed điều khoản mapping MOU giữa Lemon Digital x PMAX",
+    "submitted": "2026-05-17T12:03:34.842Z"
+  }
+]
