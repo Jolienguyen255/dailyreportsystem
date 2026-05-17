@@ -1,5 +1,54 @@
 [
   {
+    "id": 3,
+    "date": "2026-05-14",
+    "team": "mkt",
+    "author": "Tố Trân",
+    "tasks": [
+      {
+        "tenTask": "Credential",
+        "pic": "Tố Trân",
+        "tienDo": "🟡 Đang làm — 50%",
+        "chiTiet": "Trân - Meeting vs a.Sơn, check wording câu từ mục giải pháp\nVân - https://docs.google.com/presentation/d/1fj9pBgc4y2ObNX29dX5B9sqLARUnoCHoCC80M-bWNVY/edit?slide=id.g3e16c05cc86_1_136#slide=id.g3e16c05cc86_1_136\nHuy - Design, update credential sau khi meeting với anh Sơn >> 75%",
+        "nextStep": "Tiếp tục làm",
+        "link": "https://docs.google.com/presentation/d/1fj9pBgc4y2ObNX29dX5B9sqLARUnoCHoCC80M-bWNVY/edit?slide=id.g3e16c05cc86_1_136#slide=id.g3e16c05cc86_1_136"
+      },
+      {
+        "tenTask": "Meeting with Pinpoint",
+        "pic": "Tố Trân",
+        "tienDo": "🟠 Chờ phản hồi",
+        "chiTiet": "Align về cơ chế share brief",
+        "nextStep": "Next-step cần hoạt động MKT 2 bên để propose và process tiếp",
+        "link": ""
+      },
+      {
+        "tenTask": "Debrief with Partnership team tại Livespo",
+        "pic": "Tố Trân",
+        "tienDo": "🟢 Hoàn thành",
+        "chiTiet": "Debrief with Partnership team tại Livespo",
+        "nextStep": "Follow up",
+        "link": ""
+      },
+      {
+        "tenTask": "MMA awards masterplan",
+        "pic": "Tuyết Vân",
+        "tienDo": "🟢 Hoàn thành",
+        "chiTiet": "",
+        "nextStep": "",
+        "link": "https://docs.google.com/spreadsheets/d/1M7QqMHJD-eXwG58j8NiuQzDk93S_8OIT/edit?gid=1624548998#gid=1624548998"
+      },
+      {
+        "tenTask": "Review & wording Youtube awards:",
+        "pic": "Tuyết Vân",
+        "tienDo": "🟢 Hoàn thành",
+        "chiTiet": "",
+        "nextStep": "",
+        "link": "https://docs.google.com/spreadsheets/d/1k_G9_LqWqO35OD_VEI2F-4BFZZmSJwqs/edit?gid=1993315142#gid=1993315142"
+      }
+    ],
+    "submitted": "2026-05-17T14:20:47.693Z"
+  },
+  {
     "id": 2,
     "date": "2026-05-15",
     "team": "mkt",
