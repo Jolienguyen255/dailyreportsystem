@@ -4,8 +4,24 @@
     "date": "2026-05-17",
     "team": "bd",
     "author": "Bảo Ngọc",
-    "done": "List chaebol",
-    "next": "🟡 Đang làm — 75%",
-    "submitted": "2026-05-17T13:25:18.406Z"
+    "tasks": [
+      {
+        "tenTask": "test1",
+        "pic": "Bảo Ngọc",
+        "tienDo": "🟠 Chờ phản hồi",
+        "chiTiet": "yyyy",
+        "nextStep": "uuuuu",
+        "link": "https://docs.google.com/spreadsheets/d/175pdgvYfCbkyJAEtvvAANI0VdSV0hLhZJK1PrAuBH2U/edit?gid="
+      },
+      {
+        "tenTask": "yty",
+        "pic": "Hoài My",
+        "tienDo": "🟡 Đang làm — 50%",
+        "chiTiet": "iii",
+        "nextStep": "ooo",
+        "link": "https://docs.google.com/spreadsheets/d/175pdgvYfCbkyJAEtvvAANI0VdSV0hLhZJK1PrAuBH2U/edit?gid=0#gid=0"
+      }
+    ],
+    "submitted": "2026-05-17T13:31:41.293Z"
   }
 ]
