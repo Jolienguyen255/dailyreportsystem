@@ -1,6 +1,39 @@
 [
   {
     "id": 6,
+    "date": "2026-05-11",
+    "team": "bd",
+    "author": "Bảo Ngọc",
+    "tasks": [
+      {
+        "tenTask": "List Chaebol",
+        "pic": "Bảo Ngọc",
+        "tienDo": "🟠 Chờ phản hồi",
+        "chiTiet": "Final list chaebol approach trong tuần",
+        "nextStep": "Cần anh Sơn give insight thêm trong quá trình approach.\nTeam BD tiếp tục action trên nhóm Chaebol.",
+        "link": "https://docs.google.com/spreadsheets/d/175pdgvYfCbkyJAEtvvAANI0VdSV0hLhZJK1PrAuBH2U/edit?gid=328147600#gid=328147600"
+      },
+      {
+        "tenTask": "Align SOP với MKT Team",
+        "pic": "Thuý Phương",
+        "tienDo": "🟢 Hoàn thành",
+        "chiTiet": "Align SOP với MKT Team",
+        "nextStep": "Next step MKT dev SOP và align với BD",
+        "link": ""
+      },
+      {
+        "tenTask": "Pipeline - Brief >> QS",
+        "pic": "Hoài My",
+        "tienDo": "🟡 Đang làm — 75%",
+        "chiTiet": "Vifon - QS: Họp đàm phán giá round cuối - Ngọc\nZeiss - Brief: Họp clarify brief với khách hàng - Phương\nThaco - Brief: Họp internal điều phối làm proposal - Phương\nNovaGroup - NDA process: Follow up NDA process từ phía khách hàng - Ngọc",
+        "nextStep": "",
+        "link": ""
+      }
+    ],
+    "submitted": "2026-05-17T16:41:48.169Z"
+  },
+  {
+    "id": 5,
     "date": "2026-05-14",
     "team": "partnership",
     "author": "Hữu Phát",
@@ -41,7 +74,7 @@
     "submitted": "2026-05-17T16:21:12.194Z"
   },
   {
-    "id": 5,
+    "id": 4,
     "date": "2026-05-15",
     "team": "partnership",
     "author": "Hữu Phát",
@@ -72,23 +105,6 @@
       }
     ],
     "submitted": "2026-05-17T16:18:00.220Z"
-  },
-  {
-    "id": 4,
-    "date": "2026-05-11",
-    "team": "bd",
-    "author": "Bảo Ngọc",
-    "tasks": [
-      {
-        "tenTask": "Test",
-        "pic": "Hoài My",
-        "tienDo": "🟡 Đang làm — 75%",
-        "chiTiet": "Test",
-        "nextStep": "Test",
-        "link": ""
-      }
-    ],
-    "submitted": "2026-05-17T16:10:49.422Z"
   },
   {
     "id": 3,
