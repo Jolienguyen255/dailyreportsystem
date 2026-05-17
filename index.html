@@ -642,12 +642,26 @@
   }
 
   function renderTasks(text) {
-    const tasks = parseTasks(text);
-    return tasks.map(t => {
-      const clean = t.replace(/^[•\-\*]\s*/, '');
-      return `<div class="task-item"><span class="task-bullet">›</span><span class="task-text">${clean}</span></div>`;
-    }).join('');
+  if (!text) return '';
+  
+  // Auto-detect và convert URLs thành clickable links
+  function linkify(str) {
+    return str.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank" style="color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(124,111,255,0.3)" onmouseover="this.style.borderBottomColor=\'var(--accent)\'" onmouseout="this.style.borderBottomColor=\'rgba(124,111,255,0.3)\'">$1</a>');
   }
+
+  return text
+    .split('\n')
+    .map(l => l.trim())
+    .filter(l => l.length > 0)
+    .map(l => {
+      const clean = l.replace(/^[•\-\*]\s*/, '');
+      return `<div class="task-item">
+        <span class="task-bullet">›</span>
+        <span class="task-text">${linkify(clean)}</span>
+      </div>`;
+    })
+    .join('');
+}
 
   function renderDashboard() {
     const date = document.getElementById('dash-date').value || todayStr();
