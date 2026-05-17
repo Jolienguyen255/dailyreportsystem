@@ -319,26 +319,83 @@
   .label-done::before { background: var(--text2); }
   .label-next::before { background: var(--accent); }
 
-  .task-item {
-    display: flex;
-    gap: 10px;
-    padding: 7px 0;
-    border-bottom: 1px solid var(--border);
+  .task-card {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 12px 14px;
+    margin-bottom: 8px;
+  }
+  .task-card:last-child { margin-bottom: 0; }
+
+  .task-name {
     font-size: 13.5px;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+
+  .task-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 6px;
+  }
+
+  .task-pill {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 11.5px;
+    padding: 2px 8px;
+    border-radius: 20px;
+    border: 1px solid var(--border2);
+    color: var(--text2);
+    background: var(--bg2);
+  }
+
+  .task-pill-label {
+    color: var(--text3);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .tiendo-tag {
+    font-size: 12px;
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-weight: 500;
+  }
+
+  .task-detail {
+    font-size: 12.5px;
     color: var(--text2);
     line-height: 1.6;
+    margin-top: 6px;
+    padding-top: 6px;
+    border-top: 1px solid var(--border);
   }
-  .task-item:last-child { border-bottom: none; }
 
-  .task-bullet {
-    color: var(--text3);
-    flex-shrink: 0;
-    margin-top: 1px;
-    font-family: 'DM Mono', monospace;
+  .task-nextstep {
     font-size: 12px;
+    color: var(--accent);
+    margin-top: 4px;
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;
   }
 
-  .task-text { flex: 1; }
+  .task-link {
+    font-size: 12px;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(124,111,255,0.3);
+    word-break: break-all;
+    margin-top: 4px;
+    display: inline-block;
+  }
+  .task-link:hover { border-bottom-color: var(--accent); }
 
   /* Missing card */
   .missing-card {
@@ -636,32 +693,55 @@
 
   function teamLabel(t) { return { mkt: 'Team MKT', partnership: 'Team Partnership', bd: 'Team BD' }[t] || t; }
 
-  function parseTasks(text) {
-    if (!text) return [];
-    return text.split('\n').map(l => l.trim()).filter(l => l.length > 0);
-  }
-
-  function renderTasks(text) {
-  if (!text) return '';
-  
-  // Auto-detect và convert URLs thành clickable links
   function linkify(str) {
-    return str.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank" style="color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(124,111,255,0.3)" onmouseover="this.style.borderBottomColor=\'var(--accent)\'" onmouseout="this.style.borderBottomColor=\'rgba(124,111,255,0.3)\'">$1</a>');
+    if (!str) return '';
+    return str.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank" style="color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(124,111,255,0.3);word-break:break-all">$1</a>');
   }
 
-  return text
-    .split('\n')
-    .map(l => l.trim())
-    .filter(l => l.length > 0)
-    .map(l => {
-      const clean = l.replace(/^[•\-\*]\s*/, '');
-      return `<div class="task-item">
-        <span class="task-bullet">›</span>
-        <span class="task-text">${linkify(clean)}</span>
-      </div>`;
-    })
-    .join('');
-}
+  function tienDoColor(td) {
+    if (!td) return 'var(--text3)';
+    const s = td.toLowerCase();
+    if (s.includes('xong') || s.includes('done') || s.includes('hoàn thành') || s.includes('100%')) return 'var(--partner)';
+    if (s.includes('chờ') || s.includes('pending') || s.includes('block')) return '#ff7c4d';
+    return '#f5c542';
+  }
+
+  function renderTaskList(tasks) {
+    if (!tasks || tasks.length === 0) return '<div style="color:var(--text3);font-size:13px;padding:8px 0">Không có task</div>';
+    return tasks.map((t, i) => `
+      <div style="background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px 16px;margin-bottom:10px">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px">
+          <div style="display:flex;align-items:center;gap:8px;flex:1">
+            <span style="font-size:11px;font-family:'DM Mono',monospace;color:var(--text3);flex-shrink:0">${String(i+1).padStart(2,'0')}</span>
+            <span style="font-size:14px;font-weight:500;color:var(--text)">${t.tenTask}</span>
+          </div>
+          ${t.tienDo ? `<span style="font-size:11px;font-weight:600;color:${tienDoColor(t.tienDo)};background:rgba(255,255,255,0.05);padding:3px 10px;border-radius:20px;white-space:nowrap;flex-shrink:0">${t.tienDo}</span>` : ''}
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:16px;font-size:12px;color:var(--text2)">
+          ${t.pic ? `<span><span style="color:var(--text3)">PIC </span>${t.pic}</span>` : ''}
+          ${t.chiTiet ? `<span style="flex-basis:100%;color:var(--text2)">${t.chiTiet}</span>` : ''}
+          ${t.nextStep ? `<span style="flex-basis:100%"><span style="color:var(--text3)">Next </span>${t.nextStep}</span>` : ''}
+          ${t.link ? `<span style="flex-basis:100%">${linkify(t.link)}</span>` : ''}
+        </div>
+      </div>
+    `).join('');
+  }
+
+  function renderReportCard(r, teamClass) {
+    return `<div class="team-card ${teamClass}">
+      <div class="team-card-header">
+        <div class="team-header-left">
+          <span class="team-badge badge-${teamClass}">${teamLabel(teamClass)}</span>
+          <span class="team-author">${r.author}</span>
+          <span style="font-size:12px;color:var(--text3)">${r.tasks ? r.tasks.length + ' tasks' : ''}</span>
+        </div>
+        <span class="team-time">Gửi lúc ${formatTime(r.submitted)}</span>
+      </div>
+      <div class="team-card-body">
+        ${renderTaskList(r.tasks)}
+      </div>
+    </div>`;
+  }
 
   function renderDashboard() {
     const date = document.getElementById('dash-date').value || todayStr();
@@ -679,7 +759,6 @@
     const el = document.getElementById('dash-content');
     const teams = ['mkt', 'partnership', 'bd'];
 
-    // Status row
     let statusHtml = `<div class="team-status-row">`;
     teams.forEach(t => {
       const done = reported.includes(t);
@@ -698,33 +777,11 @@
       html += `<div class="team-section" style="animation-delay:${idx * 0.06}s">`;
       if (reps.length === 0) {
         html += `<div class="missing-card">
-          <div class="missing-icon">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-          </div>
+          <div class="missing-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
           <div><span class="team-badge badge-${t}">${teamLabel(t)}</span>&nbsp;&nbsp;Chưa có báo cáo cho ngày này</div>
         </div>`;
       } else {
-        reps.forEach(r => {
-          html += `<div class="team-card ${t}">
-            <div class="team-card-header">
-              <div class="team-header-left">
-                <span class="team-badge badge-${t}">${teamLabel(t)}</span>
-                <span class="team-author">${r.author}</span>
-              </div>
-              <span class="team-time">Gửi lúc ${formatTime(r.submitted)}</span>
-            </div>
-            <div class="team-card-body">
-              <div class="report-section">
-                <div class="report-section-label label-done">Kết quả hôm nay</div>
-                ${renderTasks(r.done)}
-              </div>
-              ${r.next ? `<div class="report-section">
-                <div class="report-section-label label-next">Next step ngày mai</div>
-                ${renderTasks(r.next)}
-              </div>` : ''}
-            </div>
-          </div>`;
-        });
+        reps.forEach(r => { html += renderReportCard(r, t); });
       }
       html += '</div>';
     });
@@ -756,27 +813,7 @@
           <div class="day-divider-line"></div>
           <span class="day-divider-date">${byDate[d].length} báo cáo</span>
         </div>`;
-      byDate[d].forEach(r => {
-        html += `<div class="team-card ${r.team}" style="margin-bottom:12px">
-          <div class="team-card-header">
-            <div class="team-header-left">
-              <span class="team-badge badge-${r.team}">${teamLabel(r.team)}</span>
-              <span class="team-author">${r.author}</span>
-            </div>
-            <span class="team-time">Gửi lúc ${formatTime(r.submitted)}</span>
-          </div>
-          <div class="team-card-body">
-            <div class="report-section">
-              <div class="report-section-label label-done">Kết quả</div>
-              ${renderTasks(r.done)}
-            </div>
-            ${r.next ? `<div class="report-section">
-              <div class="report-section-label label-next">Next step</div>
-              ${renderTasks(r.next)}
-            </div>` : ''}
-          </div>
-        </div>`;
-      });
+      byDate[d].forEach(r => { html += renderReportCard(r, r.team); });
       html += '</div>';
     });
     el.innerHTML = html;
@@ -791,9 +828,23 @@
 
   // Demo fallback data
   const DEMO_DATA = [
-    { id: 1, date: new Date().toISOString().slice(0,10), team: 'mkt', author: 'Trân + Vân + Huy', done: '• Credential: Meeting với a.Sơn, check wording câu từ mục giải pháp\n• Meeting with Pinpoint: Align về cơ chế share brief\n• Debrief with Partnership team tại Livespo\n• MMA awards masterplan (Vân): Cập nhật masterplan 2026\n• Design credential sau meeting a.Sơn (Huy): 75%', next: '• Finalize credential sau feedback a.Sơn\n• Dev SOP align với BD team', submitted: new Date().toISOString() },
-    { id: 2, date: new Date().toISOString().slice(0,10), team: 'partnership', author: 'Thúy Hà', done: '• List agency name cho các vertical trọng điểm → Đang fill-in contact\n• Partnership MOU — Follow up Legal team → Done review\n• Tìm hiểu partner Vibula → Đang trao đổi qua Zalo\n• Brief Tapo: Đã phản hồi KH về việc turn down brief lần này', next: '• Done agency list & priority cho Auto & Real Estate\n• Lemon Digital MOU finalize\n• Meeting với LiveSpo Pharma để take brief', submitted: new Date().toISOString() },
-    { id: 3, date: new Date().toISOString().slice(0,10), team: 'bd', author: 'Ngọc + Đại', done: '• Final list chaebol approach trong tuần\n• Align SOP với MKT Team\n• Vifon — QS: Họp đàm phán giá round cuối\n• Zeiss — Brief: Họp clarify brief với KH\n• Thaco — Brief: Họp internal điều phối làm proposal\n• NovaGroup — NDA: Follow up process từ KH', next: '• Team BD tiếp tục action trên nhóm Chaebol\n• Chốt SOP pod assignment, điền GP2 với a.Sơn', submitted: new Date().toISOString() }
+    { id: 1, date: new Date().toISOString().slice(0,10), team: 'mkt', author: 'Trân + Vân + Huy', submitted: new Date().toISOString(), tasks: [
+      { tenTask: 'Credential deck', pic: 'Trân', tienDo: '🔄 Đang làm', chiTiet: 'Meeting với a.Sơn, check wording câu từ mục giải pháp', nextStep: 'Finalize sau feedback a.Sơn', link: '' },
+      { tenTask: 'Meeting Pinpoint', pic: 'Trân', tienDo: '✅ Xong', chiTiet: 'Align về cơ chế share brief', nextStep: 'MKT 2 bên propose và process tiếp', link: '' },
+      { tenTask: 'MMA awards masterplan', pic: 'Vân', tienDo: '✅ Xong', chiTiet: 'Cập nhật masterplan 2026', nextStep: '', link: 'https://docs.google.com/spreadsheets/d/1M7QqMHJD' },
+      { tenTask: 'Design credential', pic: 'Huy', tienDo: '🔄 75%', chiTiet: 'Update sau meeting a.Sơn', nextStep: 'Hoàn thiện phần còn lại', link: '' },
+    ]},
+    { id: 2, date: new Date().toISOString().slice(0,10), team: 'partnership', author: 'Thúy Hà', submitted: new Date().toISOString(), tasks: [
+      { tenTask: 'Agency list theo vertical', pic: 'Thúy Hà', tienDo: '🔄 Đang làm', chiTiet: 'Đang fill-in contact & sắp xếp thứ tự ưu tiên', nextStep: 'Done by T5 (14.5)', link: '' },
+      { tenTask: 'Partnership MOU', pic: 'Thúy Hà', tienDo: '✅ Done review', chiTiet: 'Follow up Legal team — đã nhận lại nội dung chỉnh sửa', nextStep: 'Gửi finalized MOU cho partner', link: '' },
+      { tenTask: 'Brief LiveSpo Pharma', pic: 'Thúy Hà', tienDo: '🔄 Đang làm', chiTiet: 'Call cùng Trân MKT với a.Trường PIC để nắm thông tin', nextStep: 'Meeting ngày mai để take brief', link: '' },
+    ]},
+    { id: 3, date: new Date().toISOString().slice(0,10), team: 'bd', author: 'Ngọc + Đại', submitted: new Date().toISOString(), tasks: [
+      { tenTask: 'Chaebol approach list', pic: 'Ngọc + Đại', tienDo: '✅ Done', chiTiet: 'Final list chaebol approach trong tuần', nextStep: 'Cần a.Sơn give insight thêm', link: 'https://docs.google.com/spreadsheets/d/175pdgvY' },
+      { tenTask: 'Vifon — Quotation', pic: 'Ngọc', tienDo: '🔄 Đàm phán', chiTiet: 'Họp đàm phán giá round cuối', nextStep: 'Chốt giá và gửi QS chính thức', link: '' },
+      { tenTask: 'Zeiss — Brief', pic: 'Đại', tienDo: '✅ Xong', chiTiet: 'Họp clarify brief với khách hàng', nextStep: 'Làm proposal', link: '' },
+      { tenTask: 'NovaGroup — NDA', pic: 'Ngọc', tienDo: '⏳ Chờ KH', chiTiet: 'Follow up NDA process từ phía khách hàng', nextStep: 'Chờ KH phản hồi', link: '' },
+    ]},
   ];
 
   // Init
@@ -802,7 +853,7 @@
   loadData();
 
   // Auto-refresh mỗi 5 phút
-  setInterval(loadData, 30 * 1000);
+  setInterval(loadData, 5 * 60 * 1000);
 </script>
 </body>
 </html>
