@@ -1,101 +1,11 @@
 [
   {
-    "id": 11,
-    "date": "2026-05-11",
+    "id": 1,
+    "date": "2026-05-17",
     "team": "bd",
     "author": "Bảo Ngọc",
-    "done": "Final list chaebol approach trong tuần: BD Team - List Enterprise/ Chaebol  >>> Cần anh Sơn give insight thêm trong quá trình approach.\nAlign SOP với MKT Team: Next step MKT dev SOP và align với BD\nChốt Product ship: 1 workflow from Claude (OKR)\nPipeline - Brief >> QS\nVifon - QS: Họp đàm phán giá round cuối\nZeiss - Brief: Họp clarify brief với khách hàng\nThaco - Brief: Họp internal điều phối làm proposal\nNovaGroup - NDA process: Follow up NDA process từ phía khách hàng",
-    "next": "Team BD tiếp tục action trên nhóm Chaebol.\nNgọc + Đại: Chốt SOP pod assignment, điền GP2 với anh Sơn.",
-    "submitted": "2026-05-17T12:38:06.721Z"
-  },
-  {
-    "id": 10,
-    "date": "2026-05-11",
-    "team": "partnership",
-    "author": "Hữu Phát",
-    "done": "1. Kết quả công việc chính trong ngày: \n. Xây dựng được cơ bản master plan kèm data & tentative action cho tháng 5 tháng 6 \n. List down logic & danh sách Hiệp hội event & Partner agency đúng với direction theo vertical (Cross check lại data sẵn có)  PMAX_Partnership_Master_Plan_May-Jun_2026 \n. Follow up pending brief cases\n. Log activitites dashboard \n. Meeting với Legal team cho phần MOU process\n\n2. Các issue/blocker cần support (nếu có)\n. Case TP-link pending từ phía anh Trung cho phần submit báo giá (đã trễ deadline) \n. Follow up với MKT team về resource (human/budget/mkt plan 2026)",
-    "next": ". Finalize Master plan để trình bày cho anh Sơn \n. Finalize được procedure với Legal cho phần MOU \n. Lên ý tưởng prep kit cho Co-build product & co-branding acvitites với partner \n. Action Plan",
-    "submitted": "2026-05-17T12:34:14.651Z"
-  },
-  {
-    "id": 9,
-    "date": "2026-05-12",
-    "team": "partnership",
-    "author": "Hữu Phát",
-    "done": "List Agency/ Hiệp hội event name cho các vertical trọng điểm \n=> Done: Tìm hiểu các Agency/Hiệp hội name tiêu biểu trong ngành & danh sách KH tiêu biểu \nPartnership MOU - Follow up với Legal team để nhận lại nội dung đã chỉnh sửa \nFollow up pending deal: \nBrief Tapo - Chase a Trung gửi báo giá cho KH (đã trễ deadline 1 tuần) \n=> Issue: Dù đã chase online & offline, anh Trung đưa ra lead time & mức độ ảnh hưởng đến PMAX (độ serious & tính chuyên nghiệp của PMAX), hiện vẫn chưa có response lead time cụ thể từ anh Trung. Cần anh Sơn support thêm để chase \nBrief của Riddlers (Game Development Studio của Hàn Quốc đang kiếm media partner cho KH của họ chuẩn bị launch game tại VN)\n=> Done: KH đã gửi thêm thông tin về brief nhưng vì hạn chế ngôn ngữ nên communicate qua mess còn unclear về mqh với KH, mục tiêu & sản phẩm của KH & Riddlers ko thể call vì ko giao tiếp được bằng tiếng anh \n=> Next step: List các câu hỏi cần clarify lại với Riddlers . Nếu phản hồi qua text còn unclear, hoặc vẫn quyết định từ chối call để cùng clarify brief => Suggest về việc work trực tiếp với KH => Nếu ko thể reveal KH,  quyết định drop brief Follow up QS cho event Ivy+ Partners: failed do partner không có đủ ngân sách để chạy ads >> đã báo partner gửi lại official email để team nắm thông tin. \nFinalize MOU với Dinosaur/ Lemon Digital cho phần partnership model + scheme Set up meeting with client LiveSpo Pharma (chiều t5) \nFinalize Idea co-solution & co-branding framework \nGet info về camp re-positioning cho AWING",
-    "next": "Sắp xếp thứ tự ưu tiên & Fill-in contact info của list hiệp hội/ agency kèm theo background, thế mạnh, điều họ cần khi PMAX đề xuất hợp tác, aka insights >> PMAX add được value gì về branding equity hoặc solution mapping, phục vụ objective branding hoặc acquisition\nFollow up lead time Legal gửi lại revised version. 10AM mai sẽ catch up status để cuối ngày mai finish chuẩn bị send out bản cứng cho KH\nTìm hiểu về partner Vibula (ecom agency) để đề xuất meeting và trao đổi về cơ hội hợp tác >> đã có contact của founder (được chị Quỳnh Anh connect)\nDraft ideas, prep kit, action cho co-solution & co-branding framework \nCatchup a Cường cho camp re-positioning cho AWING với Q&A next step",
-    "submitted": "2026-05-17T12:33:13.829Z"
-  },
-  {
-    "id": 8,
-    "date": "2026-05-13",
-    "team": "partnership",
-    "author": "Hữu Phát",
-    "done": "List Agency name cho các vertical trọng điểm => Status: Vẫn đang trong quá trình fill-in contact & sắp xếp thứ tự ưu tiên. Ask support thêm từ Account team: Long (nhánh RE), Thư Lâm (nhánh Healthcare & Beauty), Bá Huy (Auto & Finance) \nList down logic & danh sách Hiệp hội/ Event đúng với direction theo vertical >> đang update thêm logic và các brand/ thành viên cụ thể cho từng Hiệp hội\nPartnership MOU - Follow up với Legal team để nhận lại nội dung đã chỉnh sửa => Status: Done review legal comment \nTìm hiểu về partner Vibula (ecom agency) >> đang trao đổi với co-founder qua Zalo để hẹn meeting.\nPartnership dicussion for Ebook issuing & Paperwork with Focus Media\nPartnership dicussion models với Carmudi cho Auto vertical\nFollow up brief\n+ Brief Tapo - Chase a Trung gửi báo giá cho KH (đã trễ deadline 1 tuần) \n=> Status: Đã call + gửi email phản hồi cho KH về việc sẽ turn down brief lần này. Tuy nhiên, vẫn open cho cơ hội mới về tầng Strategy với higher level \n+ Brief LiveSpo Pharma: Cùng với Trân MKT call cho anh Trường PIC LiveSpo để nắm thêm thông tin cho meeting ngày mai\n+ Brief Bung Goi Verdura: Gửi thông tin tổng quan PMAX và hẹn meeting",
-    "next": "Done agency list & priority cho nhánh Auto & Real Estate by T5 (14.5)\nDone thông tin cho list Hiệp hội/ Event để team approach.\nTrao đổi lại và soạn email gửi finalized MOU cho partner\nLemon Digital MOU finalize\nĐưa ra solution offer cho nhóm Traditional-Strong Client\nMeeting với LiveSpo Pharma để take brief",
-    "submitted": "2026-05-17T12:27:52.770Z"
-  },
-  {
-    "id": 7,
-    "date": "2026-05-11",
-    "team": "mkt",
-    "author": "Tố Trân",
-    "done": "Trân\n1- Credential:\nRelease timeline + workplan và asign task với team\nLink: https://docs.google.com/spreadsheets/d/1XnOkRhnudbJKV_Ar-6Gi_nI5kkUncidVotGOgOmvujA/edit?gid=637341273#gid=637341273\nCross-check số lượng product/số lượng hiện có: Đã liên hệ anh Hạnh >> Dự kiến nhận Ver1 vào ngày mai\n2- PPW: Process thanh toán chi phí Meta Growth Summit: Done (100%)\n----\nHà Minh Huy\n1- Credential: Design template credential general\nTiến độ: 30%\nETA hoàn thành: 12h00 ngày 12/5\nLink:  PMAX CREDENTIAL | GENERAL \n----\nChị Vân Lê\n1- Podcast social post\nĐã hoàn thành 2 bài hôm nay\nTiến độ hiện tại: 8/12 bài\n2- Ebook Home\nĐã hoàn thành 1 bài hôm nay\nTiến độ: 4/4 bài\nLink: https://docs.google.com/presentation/d/1l9SftfskcM_d2iZLeeDkCkDj7PPNdDVUszFBoUKAO4Y/edit?slide=id.g3e7e37c9d11_1_0#slide=id.g3e7e37c9d11_1_0\n3- Credential\nĐang brief & thu thập thông tin case study\nTiến độ: 70%\nLink: https://docs.google.com/spreadsheets/d/1hjRXQkjeu37SayY8dwulnWPRnDjxua2C/edit?usp=sharing&ouid=112230100657565036019&rtpof=true&sd=true",
-    "next": "",
-    "submitted": "2026-05-17T12:21:02.191Z"
-  },
-  {
-    "id": 6,
-    "date": "2026-05-12",
-    "team": "mkt",
-    "author": "Tố Trân",
-    "done": "Trân\nTổng hợp thông tin giải pháp: 10%\nCredential: Re-build mô hình giải pháp (50%)\nMMA Awards: catch-up meeting với team project\n\nChị Vân\nReal estate ver VN (100%):  PMAX Real Estate Credential_ May 2026_VN \nFile thu thập thông tin case study (100%, đã gửi anh Trung, đang chờ phản hồi):  MARKETING X ACCOUNT | THU THẬP THÔNG TIN KHÁCH HÀNG CHO CASE STUDY.xlsx \nTổng hợp thông tin MMA gửi team account\nHuy\nDesign outline deck credential -> 50% | next step beautify theo content\nUpdate design social post 2 EBook Home > Chị Nga approved\nTham gia training\nAll team: Revenue Trainning - buổi 1",
-    "next": "",
-    "submitted": "2026-05-17T12:20:36.768Z"
-  },
-  {
-    "id": 5,
-    "date": "2026-05-13",
-    "team": "mkt",
-    "author": "Tố Trân",
-    "done": "2 task team MKT tập trung hôm nay: Credential và Ebook Home (Social Post), chi tiết:\nTrân\nCredential: Re-build mô hình giải pháp (70%)\nCross check danh sách khách hàng\nSupport briefing Livespo Pharma\nVân\nCredential: PMAX CREDENTIAL | GENERAL \nProceed collect data từ HR, anh Hạnh, anh Trung\nHuy\nDesign deck credential -> 70% | next step beautify 2nd round sau khi propose với anh Sơn\nDesign social post 3 EBook Home > Done",
-    "next": "",
-    "submitted": "2026-05-17T12:19:30.586Z"
-  },
-  {
-    "id": 4,
-    "date": "2026-05-14",
-    "team": "mkt",
-    "author": "Tố Trân",
-    "done": "Trân: \nCredential: Meeting vs a.Sơn, check wording câu từ mục giải pháp\nMeeting with Pinpoint: Align về cơ chế share brief >> Next-step cần hoạt động MKT 2 bên để propose và process tiếp\nDebrief with Partnership team tại Livespo\nVân:\nCredential:  PMAX CREDENTIAL | GENERAL \nMMA awards masterplan:  MMA_SMARTIES 2026 | Masterplan.xlsx \nReview & wording Youtube awards:  Youtube Work Awards 2026 - [MSG - PMAX] .xlsx\nHuy\nDesign, update credential sau khi meeting với anh Sơn >> 75%",
-    "next": "",
-    "submitted": "2026-05-17T12:17:55.622Z"
-  },
-  {
-    "id": 3,
-    "date": "2026-05-15",
-    "team": "mkt",
-    "author": "Tố Trân",
-    "done": "Trân\nCredential: Redesign hệ sinh thái Giải pháp PMAX và Hệ sinh thái đối tác\nVân\nCredential: PMAX CREDENTIAL | GENERAL \nWording & hỗ trợ submit Youtube awards\nCompleted MMA masterplan\nHuy\nCredential design beautify slide -> 90%",
-    "next": ".",
-    "submitted": "2026-05-17T12:17:06.136Z"
-  },
-  {
-    "id": 2,
-    "date": "2026-05-15",
-    "team": "partnership",
-    "author": "Hữu Phát",
-    "done": "List Agency name cho các vertical trọng điểm \n=> Status: Vẫn đang trong quá trình fill-in list & sắp xếp & priority cho nhánh Healthcare, Finance, Home\nPartnership MOU \n=> Status: Đã communicate với các partner đã gửi MOU về các điểm bổ sung & process trình ký\nSắp xếp lịch hẹn TCM - anh Bình (chairman), anh Phong (co-founder)\n=> Status: Đã update tình hình với anh Sơn về status hiện tại giữa 2 team. Đã inform với anh Bình tentative tuần sau sẽ gặp mặt \nXin lại file brief của LiveSpo để align next step\nGửi lại Product Mapping dựa trên Customer Journey Landscape cho Carmudi (platform Auto để approach) >> Đang setup meeting với Bung Goi Verdura Phú Quốc & Suzuki\nDiscuss điều khoản MOU với T&A Ogilvy\nFinalize partner Top of mind cho new credential của PMAX",
-    "next": "Nhờ anh Sơn review cho nội dung của nhánh Auto by T2 (18/5).  \nDone agency list & priority cho nhánh Healthcare, Finance, Home by T3 (19.5)\nGet final confirmation of partner by T3 (19/5) về MOU update\nFinalize hướng nội dung sẽ trao đổi TCM trong buổi 2nd meeting cùng các high level & trao đổi cùng anh Sơn vào T2 (18/5)\nGửi lại danh sách Hiệp hội/ Event cho anh Sơn review vào đầu tuần sau (18-19.05) để xem cần input thêm thông tin gì không\nFinalize MOU với T&A Ogilvy để trình ký (trước đó pending ví Finance của partner vịn lại)",
-    "submitted": "2026-05-17T12:04:50.474Z"
-  },
-  {
-    "id": 1,
-    "date": "2026-05-14",
-    "team": "partnership",
-    "author": "Hữu Phát",
-    "done": "List Agency name cho các vertical trọng điểm \n=> Status: Done agency list & priority cho nhánh Auto & Real Estate \nPartnership MOU - Follow up với Legal team để nhận lại nội dung đã chỉnh sửa\n=> Status: Còn 1 số comment của Legal về phần Annex cần discuss thêm\nMeeting với LiveSpo Pharma để take brief >> đang collect thông tin brief và sẽ gửi lại recap meeting sau khi có đủ thông tin\n1st version dev LOP cho Fisa (Phòng cháy chữa cháy) - các hạng mục PMAX sẽ thực hiện cho phần tư vấn MKT tổng thể >> Status: Đã có 1st version cần review lại ref team Strategy \nMOU Dinosaur reviewed trình ký >> Status: Đã align xong các điều khoản với external",
-    "next": "Done agency list & priority cho nhánh Healthcare, Finance, Home by T6 (15.5)\nCommunicate với các partner đã gửi MOU về các điểm bổ sung & process trình ký\nGửi lại meeting recap cho LiveSpo Pharma + next steps \nTrình ký MOU Dinosaur \nReviewed điều khoản mapping MOU giữa Lemon Digital x PMAX",
-    "submitted": "2026-05-17T12:03:32.552Z"
+    "done": "List chaebol",
+    "next": "🟡 Đang làm — 75%",
+    "submitted": "2026-05-17T13:25:18.406Z"
   }
 ]
