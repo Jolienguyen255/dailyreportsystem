@@ -1,5 +1,46 @@
 [
   {
+    "id": 11,
+    "date": "2026-05-18",
+    "team": "mkt",
+    "author": "Tố Trân",
+    "tasks": [
+      {
+        "tenTask": "Master Content Plan Vertical Auto (70%)",
+        "pic": "Tuyết Vân",
+        "tienDo": "🟡 Đang làm — 75%",
+        "chiTiet": "Planning Content Plan cho Vertical Auto",
+        "nextStep": "Hoàn chỉnh",
+        "link": ""
+      },
+      {
+        "tenTask": "Social post Podcast Home: 3 FMCG & HOME",
+        "pic": "Tuyết Vân",
+        "tienDo": "🟢 Hoàn thành",
+        "chiTiet": "Đã làm 3 bài",
+        "nextStep": "Gửi sang chị Nga Approve",
+        "link": "https://docs.google.com/presentation/d/1l9SftfskcM_d2iZLeeDkCkDj7PPNdDVUszFBoUKAO4Y/edit?slide=id.g3e09b84d5b4_0_3#slide=id.g3e09b84d5b4_0_3"
+      },
+      {
+        "tenTask": "Podcast: Track cost & Performance",
+        "pic": "Tố Trân",
+        "tienDo": "🟡 Đang làm — 50%",
+        "chiTiet": "- Work với Account (Vy) Clear thông tin chi phí\n- Check performance và report",
+        "nextStep": "Hoàn thành file report, tính ROI và meeting với anh Sơn, chị Nga",
+        "link": "https://docs.google.com/spreadsheets/d/1kG0ms0QppeUo0BH0I6ZxXzmnIAndGy7rRgYQEzrCVcE/edit?gid=1750238697#gid=1750238697"
+      },
+      {
+        "tenTask": "PMAX Marketing Brief",
+        "pic": "Tố Trân",
+        "tienDo": "🟡 Đang làm — 75%",
+        "chiTiet": "- Nội dung: Bổ sung Calendar & Rate card\n- Đẩy lên Github",
+        "nextStep": "Hoàn chỉnh đẩy file lên Github và send out",
+        "link": "https://docs.google.com/spreadsheets/d/1Q8dbvUFPSMO7mVZoIZYFBnkXHBN0nDfQtZRatjqIzOU/edit?gid=1536069970#gid=1536069970"
+      }
+    ],
+    "submitted": "2026-05-18T09:51:08.398Z"
+  },
+  {
     "id": 10,
     "date": "2026-05-18",
     "team": "partnership",
