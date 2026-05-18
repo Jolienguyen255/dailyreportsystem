@@ -1,5 +1,38 @@
 [
   {
+    "id": 9,
+    "date": "2026-05-18",
+    "team": "partnership",
+    "author": "Minh Thư",
+    "tasks": [
+      {
+        "tenTask": "Parnership MOU (Vietsuccess, EloQ Communications, Focus Media)",
+        "pic": "Minh Thư",
+        "tienDo": "🟠 Chờ phản hồi",
+        "chiTiet": "đã chỉnh và gửi lại từng bản finalized MOU cho từng partner, đang trao đổi đợi partner done review.",
+        "nextStep": "đang hẹn với partner gửi lại confirmation trước thứ 4 (20.05)",
+        "link": ""
+      },
+      {
+        "tenTask": "Take brief LiveSpo Pharma - Media Branding",
+        "pic": "Minh Thư",
+        "tienDo": "🟢 Hoàn thành",
+        "chiTiet": "đã xin lại thông tin brief, gửi lại recap meeting và assign POD cho brief",
+        "nextStep": "gửi lại email confirmation trong hôm nay (18.05) để xác nhận tham gia pitching",
+        "link": ""
+      },
+      {
+        "tenTask": "Trao đổi với anh Ý - co-founder Vibula để tìm kiếm cơ hội hợp tác",
+        "pic": "Minh Thư",
+        "tienDo": "🟡 Đang làm — 50%",
+        "chiTiet": "đang trao đổi thông tin và credential của PMAX để hẹn meeting trao đổi thêm",
+        "nextStep": "đang dự kiến hẹn meeting trong tuần này, trễ nhất là T6 (22.05)",
+        "link": ""
+      }
+    ],
+    "submitted": "2026-05-18T09:35:38.597Z"
+  },
+  {
     "id": 8,
     "date": "2026-05-18",
     "team": "partnership",
