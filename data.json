@@ -1,5 +1,94 @@
 [
   {
+    "id": 12,
+    "date": "2026-05-18",
+    "team": "bd",
+    "author": "Bảo Ngọc",
+    "tasks": [
+      {
+        "tenTask": "[Auto Vertical] – Research – EV Brands VN",
+        "pic": "Thuý Phương",
+        "tienDo": "🟡 Đang làm — 50%",
+        "chiTiet": "BD team list toàn bộ các case Auto đang nắm + update info",
+        "nextStep": "Cập nhật trạng thái approach từng case. \nResearch thêm các brand EV Trung Quốc",
+        "link": "https://docs.google.com/spreadsheets/d/1CJdyUsb2lQWi3Odn3RGJtjDOXQsDnJFvNjbu0NyTjio/edit?gid=0#gid=0"
+      },
+      {
+        "tenTask": "[Pipeline] – Verbal Confirm – VIFON UGC 2026",
+        "pic": "Bảo Ngọc",
+        "tienDo": "🟡 Đang làm — 75%",
+        "chiTiet": "Tiến hành debrief cho account team. \nProcess NDA song phương với Ms. Mai\nAdd Group process hợp đồng.",
+        "nextStep": "NDA - Follow up để process kí\nProcess HĐ - Follow up + push account",
+        "link": ""
+      },
+      {
+        "tenTask": "[Pipeline] – Brief – NOVAGROUP",
+        "pic": "Bảo Ngọc",
+        "tienDo": "🟡 Đang làm — 25%",
+        "chiTiet": "Set ext meeting 5-6PM 19/5\nBổ sung thêm câu hỏi clarify brief\nNDA - Tiến hành re-trình ký vì brand điền sai thông tin",
+        "nextStep": "19/5: Meeting clarify brief\n19/5: Process ký lại NDA",
+        "link": ""
+      },
+      {
+        "tenTask": "[Pipeline] – Brief – Techcombank",
+        "pic": "Thảo Hồ",
+        "tienDo": "🟡 Đang làm — 50%",
+        "chiTiet": "proceed văn bản thoả thuận, cần anh Duy và chị Thư Lâm reply loop mail NDA để Legal team proceed next step",
+        "nextStep": "",
+        "link": "https://chat.google.com/room/AAQAV7Sj6V4/m4IyHjP8wh4/m4IyHjP8wh4?cls=10"
+      },
+      {
+        "tenTask": "[Pipeline] – QL – Tập đoàn Y tế Phương Châu",
+        "pic": "Thảo Hồ",
+        "tienDo": "🟡 Đang làm — 50%",
+        "chiTiet": "Follow up cùng Brand về timeline gửi bài từ internal",
+        "nextStep": "21/5: gửi file AI Search cho khách",
+        "link": ""
+      },
+      {
+        "tenTask": "[Pipeline] – QL – ACECOOK",
+        "pic": "Thảo Hồ",
+        "tienDo": "🟡 Đang làm — 25%",
+        "chiTiet": "Catch up lại QL và approach thêm các PIC mới để hỏi về thông tin có camp booking",
+        "nextStep": "Gửi mail portfolio MCNs của PMAX qua email cho pic Acecook xem qua, set meeting",
+        "link": ""
+      },
+      {
+        "tenTask": "[Pipeline] – Brief – Palm City",
+        "pic": "Thuý Phương",
+        "tienDo": "🟡 Đang làm — 50%",
+        "chiTiet": "Proceed brief với team nội bộ. \nChạy pod assignment. \nCollect list Q&A. \nSet meeting clarify brief",
+        "nextStep": "Set meeting clarify brief\nProcess NDA",
+        "link": ""
+      },
+      {
+        "tenTask": "[Pipeline] – QB – Zeiss",
+        "pic": "Thuý Phương",
+        "tienDo": "🟢 Hoàn thành",
+        "chiTiet": "Team đang làm bài. \nHẹn khách lịch meeting present plan",
+        "nextStep": "Chốt ngày và khung giờ meeting",
+        "link": ""
+      },
+      {
+        "tenTask": "[Pipeline] – Brief – Đại học Phương Đông",
+        "pic": "Thuý Phương",
+        "tienDo": "🟡 Đang làm — 75%",
+        "chiTiet": "Trao đổi thông tin về nhu cầu. \nCollect brief theo form mẫu. \nGửi brief cho INT",
+        "nextStep": "Chạy pod assignment. \nSet lịch meeting để qualified brief.",
+        "link": ""
+      },
+      {
+        "tenTask": "[Passive Pipeline] All Channel",
+        "pic": "Bảo Ngọc",
+        "tienDo": "🟢 Hoàn thành",
+        "chiTiet": "Trực tư vấn và take brief từ source passive\nNgọc - Email\nThảo - Hotline\nPhương - Livechat\nMy - Fanpage",
+        "nextStep": "",
+        "link": ""
+      }
+    ],
+    "submitted": "2026-05-18T16:33:49.763Z"
+  },
+  {
     "id": 11,
     "date": "2026-05-18",
     "team": "mkt",
