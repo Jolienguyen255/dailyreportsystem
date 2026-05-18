@@ -1,5 +1,46 @@
 [
   {
+    "id": 10,
+    "date": "2026-05-18",
+    "team": "partnership",
+    "author": "Hữu Phát",
+    "tasks": [
+      {
+        "tenTask": "MOU Mapping giữa Lemon Digital x PMAX >> Finalize version",
+        "pic": "Hữu Phát",
+        "tienDo": "🟡 Đang làm — 75%",
+        "chiTiet": "Đã tổng hợp được 2 file hoàn chỉnh của Lemon & PMAX. Cần finalize 1 bản hoàn chỉnh để gửi lại Lemon Digital thống nhất giấy tờ hợp tác",
+        "nextStep": "Done vào Thứ Ba (19.05) gửi lại cho Lemon Digital",
+        "link": "TBU"
+      },
+      {
+        "tenTask": "Take brief Oribe - Partner với Kaleido",
+        "pic": "Hữu Phát",
+        "tienDo": "🟠 Chờ phản hồi",
+        "chiTiet": "Nhận được lời mời co-pitch với Kaleido cho brief của Oribe về phần Media - Creative AWO - Influencer MKT, tuy nhiên cần clarify lại 1 số point vì còn thiếu nhiều info, budget limitation",
+        "nextStep": "Chase partner để có respond vào Thứ 3 (19.05) để process next step",
+        "link": "TBU"
+      },
+      {
+        "tenTask": "Phản hồi Momo - SEO Brief ref cho TOS",
+        "pic": "Hữu Phát",
+        "tienDo": "🟢 Hoàn thành",
+        "chiTiet": "Momo có brief phần SEO cho PMAX (ref cho partner TOS để handle) tuy nhiên đánh giá không tiềm năng, CLV thấp và dò giá nên turn down",
+        "nextStep": "Gửi email official thông báo cho Momo",
+        "link": ""
+      },
+      {
+        "tenTask": "Catchup Partner MOU với Biweb & Carmudi",
+        "pic": "Hữu Phát",
+        "tienDo": "🟠 Chờ phản hồi",
+        "chiTiet": "Đã chỉnh và gửi lại từng bản finalized MOU cho partner screen qua và finalize kí kết",
+        "nextStep": "Đang hẹn với partner gửi lại confirmation trong tuần này trước thứ 6 (22.05)",
+        "link": ""
+      }
+    ],
+    "submitted": "2026-05-18T09:42:48.651Z"
+  },
+  {
     "id": 9,
     "date": "2026-05-18",
     "team": "partnership",
