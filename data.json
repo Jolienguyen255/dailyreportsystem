@@ -1,5 +1,38 @@
 [
   {
+    "id": 15,
+    "date": "2026-05-19",
+    "team": "partnership",
+    "author": "Gia Bảo",
+    "tasks": [
+      {
+        "tenTask": "Partnership MOU (WOW Communications & SUDEST)",
+        "pic": "Gia Bảo",
+        "tienDo": "🟢 Hoàn thành",
+        "chiTiet": "Legal PIC của partner agree các thông tin bổ sung của Partnership MOU, không có feedback thêm",
+        "nextStep": "T4 (20.5) sẽ in bản cứng & trình ký + đóng mộc",
+        "link": ""
+      },
+      {
+        "tenTask": "Meeting với Tân Cường Minh (Event Agency)",
+        "pic": "Gia Bảo",
+        "tienDo": "🟢 Hoàn thành",
+        "chiTiet": "Đã align được hướng nội dung trao đổi với anh Sơn + Set lịch meeting với đại diện partner (Chairman & Co-founder)",
+        "nextStep": "T6 (22.5) sẽ có buổi 2nd meeting tại vp PMAX",
+        "link": ""
+      },
+      {
+        "tenTask": "Take brief Huy Thanh Jewelry - Chiến dịch viral social 2026",
+        "pic": "Gia Bảo",
+        "tienDo": "🟡 Đang làm — 75%",
+        "chiTiet": "Hiện đã có confirm từ anh Duy (POD Head) & c Đào (POD Lead). Đã chuẩn bị file Q&A để internal team (gồm có c Hảo & team Creative) cho debrief",
+        "nextStep": "Chiều T4 (20.5) - Debrief với KH",
+        "link": ""
+      }
+    ],
+    "submitted": "2026-05-19T10:11:07.658Z"
+  },
+  {
     "id": 14,
     "date": "2026-05-19",
     "team": "bd",
