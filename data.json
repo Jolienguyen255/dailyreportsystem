@@ -1,5 +1,30 @@
 [
   {
+    "id": 13,
+    "date": "2026-05-19",
+    "team": "bd",
+    "author": "Hoài My",
+    "tasks": [
+      {
+        "tenTask": "[Pipeline] The Grand Hồ Tràm - KOC Booking",
+        "pic": "Hoài My",
+        "tienDo": "🟡 Đang làm — 75%",
+        "chiTiet": "Đã gửi báo giá 1 round",
+        "nextStep": "đợi team gửi báo giá revised và hẹn meeting take brief lớn",
+        "link": ""
+      },
+      {
+        "tenTask": "[Pipeline] Gamuda Land",
+        "pic": "Hoài My",
+        "tienDo": "🟠 Chờ phản hồi",
+        "chiTiet": "Họp với trình bày năng lực với khách hàng",
+        "nextStep": "Viết recap và gửi lại",
+        "link": ""
+      }
+    ],
+    "submitted": "2026-05-19T08:10:03.755Z"
+  },
+  {
     "id": 12,
     "date": "2026-05-18",
     "team": "bd",
