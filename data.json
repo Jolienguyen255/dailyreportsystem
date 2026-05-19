@@ -1,5 +1,38 @@
 [
   {
+    "id": 17,
+    "date": "2026-05-19",
+    "team": "mkt",
+    "author": "Tố Trân",
+    "tasks": [
+      {
+        "tenTask": "Credential",
+        "pic": "Tố Trân",
+        "tienDo": "🟡 Đang làm — 75%",
+        "chiTiet": "- Chỉnh lại hệ sinh thái giải pháp, bổ sung phần hành trình phát triển, review với anh Sơn\n- Marketing Brief Request form: Build lên hệ thống Github\n- Webiste PMAX: Check project thiết kế cũ",
+        "nextStep": "- Release Credential General\n- Build Credential Auto",
+        "link": ""
+      },
+      {
+        "tenTask": "Master Content Plan vertical Auto (100%, in-review)",
+        "pic": "Tuyết Vân",
+        "tienDo": "🟠 Chờ phản hồi",
+        "chiTiet": "Master Content Plan vertical Auto (100%, in-review)",
+        "nextStep": "Review và action",
+        "link": "https://docs.google.com/spreadsheets/d/1NiCUsFrubnhjpIWglbOjcoJ7HYFz2nna/edit?usp=sharing&ouid=112684196185128553074&rtpof=true&sd=true"
+      },
+      {
+        "tenTask": "Contact trading team for PR article",
+        "pic": "Tuyết Vân",
+        "tienDo": "🟡 Đang làm — 25%",
+        "chiTiet": "Contact trading team for PR article",
+        "nextStep": "Đợi trading team reply",
+        "link": ""
+      }
+    ],
+    "submitted": "2026-05-19T11:15:55.472Z"
+  },
+  {
     "id": 16,
     "date": "2026-05-19",
     "team": "bd",
