@@ -1,5 +1,46 @@
 [
   {
+    "id": 14,
+    "date": "2026-05-19",
+    "team": "bd",
+    "author": "Thuý Phương",
+    "tasks": [
+      {
+        "tenTask": "[Pipeline] – {QL} – {THACO}",
+        "pic": "Thuý Phương",
+        "tienDo": "🟢 Hoàn thành",
+        "chiTiet": "Follow up anh Vũ - Team Thaco Tải Bus về proposal đã gửi\nFollow chị Ngân - MKT Thaco Auto về proposal đã gửi",
+        "nextStep": "Đợi khách có thông tin sẽ liên hệ, đã gửi proposal kèm tờ trình lên BLĐ",
+        "link": ""
+      },
+      {
+        "tenTask": "[Pipeline] – {Brief} – {Đại học Phương Đông}",
+        "pic": "Thuý Phương",
+        "tienDo": "🟡 Đang làm — 75%",
+        "chiTiet": "Take brief Branding tăng awareness",
+        "nextStep": "Collect đủ thông tin để tạo brief",
+        "link": ""
+      },
+      {
+        "tenTask": "[Pipeline] – {QL} – {ACFC}",
+        "pic": "Thuý Phương",
+        "tienDo": "🟡 Đang làm — 50%",
+        "chiTiet": "Khách có nhu cầu brief media retainer 1 năm, liên hệ để lấy mail gửi brief",
+        "nextStep": "Proceed brief sau khi khách gửi mail brief hoàn chỉnh",
+        "link": ""
+      },
+      {
+        "tenTask": "[Pipeline] – Brief – SkyJoy",
+        "pic": "Thuý Phương",
+        "tienDo": "🟠 Chờ phản hồi",
+        "chiTiet": "Khách gửi brief mục tiêu Brand cho dòng thẻ mới",
+        "nextStep": "Gửi brief chạy POD assign để đánh giá brief",
+        "link": ""
+      }
+    ],
+    "submitted": "2026-05-19T09:29:08.384Z"
+  },
+  {
     "id": 13,
     "date": "2026-05-19",
     "team": "bd",
