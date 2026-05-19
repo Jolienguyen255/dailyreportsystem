@@ -1,5 +1,30 @@
 [
   {
+    "id": 18,
+    "date": "2026-05-19",
+    "team": "partnership",
+    "author": "Minh Thư",
+    "tasks": [
+      {
+        "tenTask": "Partnership MOU (Focus Media)",
+        "pic": "Minh Thư",
+        "tienDo": "🟢 Hoàn thành",
+        "chiTiet": "Done review MOU với partner",
+        "nextStep": "Đã in ra, đang đợi anh Phát ký nháy và trình ký + đóng dấu",
+        "link": ""
+      },
+      {
+        "tenTask": "Trao đổi lịch meeting với anh Ý Vibula",
+        "pic": "Minh Thư",
+        "tienDo": "🟠 Chờ phản hồi",
+        "chiTiet": "Đang trao đổi hẹn lịch meeting với anh Ý co-founder",
+        "nextStep": "Sẽ follow up lại vào ngày mai (20.05)",
+        "link": ""
+      }
+    ],
+    "submitted": "2026-05-19T11:43:00.119Z"
+  },
+  {
     "id": 17,
     "date": "2026-05-19",
     "team": "mkt",
