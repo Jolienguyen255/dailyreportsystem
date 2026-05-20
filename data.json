@@ -1,5 +1,70 @@
 [
   {
+    "id": 21,
+    "date": "2026-05-20",
+    "team": "mkt",
+    "author": "Tố Trân",
+    "tasks": [
+      {
+        "tenTask": "Content Plan Auto",
+        "pic": "Tuyết Vân",
+        "tienDo": "🟠 Chờ phản hồi",
+        "chiTiet": "Điều chỉnh Content Plan Auto Vertical",
+        "nextStep": "Đợi a Sơn duyệt",
+        "link": "https://docs.google.com/spreadsheets/d/1NiCUsFrubnhjpIWglbOjcoJ7HYFz2nna/edit?gid=6500785#gid=6500785"
+      },
+      {
+        "tenTask": "Social post",
+        "pic": "Tuyết Vân",
+        "tienDo": "🟠 Chờ phản hồi",
+        "chiTiet": "* Social post Home podcast: 2\n* Social post MMA awards",
+        "nextStep": "Chờ anh Sơn duyệt",
+        "link": ""
+      },
+      {
+        "tenTask": "Operation task",
+        "pic": "Tuyết Vân",
+        "tienDo": "🟠 Chờ phản hồi",
+        "chiTiet": "* Redirect/Xoá link cũ cho team Academy (100%)\n* Xin báo giá booking PR (Đã gửi mail, chờ phản hồi)",
+        "nextStep": "Đợi phản hồi từ các team",
+        "link": ""
+      },
+      {
+        "tenTask": "MKT Brief form",
+        "pic": "Tố Trân",
+        "tienDo": "🟠 Chờ phản hồi",
+        "chiTiet": "Đã lauching hệ thống và record data thành công",
+        "nextStep": "Đợi anh Sơn approve",
+        "link": "https://mkt-pmax.github.io/pmax-marketing-brief/"
+      },
+      {
+        "tenTask": "Operation task",
+        "pic": "Tố Trân",
+        "tienDo": "🟢 Hoàn thành",
+        "chiTiet": "- Update số điện thoại HN trên các kênh\n- Support Pinpoint check thông tin Huspot",
+        "nextStep": "Done",
+        "link": ""
+      },
+      {
+        "tenTask": "Content Plan Auto",
+        "pic": "Tố Trân",
+        "tienDo": "🟢 Hoàn thành",
+        "chiTiet": "Review và comment plan",
+        "nextStep": "Done",
+        "link": ""
+      },
+      {
+        "tenTask": "Credential Auto",
+        "pic": "Tố Trân",
+        "tienDo": "🟡 Đang làm — 25%",
+        "chiTiet": "Planning flow bài và nội dung giải pháp cho Credential ngành Auto",
+        "nextStep": "Làm tiếp",
+        "link": ""
+      }
+    ],
+    "submitted": "2026-05-20T11:25:12.516Z"
+  },
+  {
     "id": 20,
     "date": "2026-05-20",
     "team": "partnership",
