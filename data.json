@@ -1,5 +1,46 @@
 [
   {
+    "id": 20,
+    "date": "2026-05-20",
+    "team": "partnership",
+    "author": "Minh Thư",
+    "tasks": [
+      {
+        "tenTask": "MOU Partnership (Focus Media & EloQ Communications)",
+        "pic": "Minh Thư",
+        "tienDo": "🟢 Hoàn thành",
+        "chiTiet": "đã trình ký anh Long và đưa legal đóng dấu",
+        "nextStep": "ngày mai (21.05) sẽ xin contact + địa chỉ để gửi signed hard copy",
+        "link": ""
+      },
+      {
+        "tenTask": "Meeting với partner Kmedia",
+        "pic": "Minh Thư",
+        "tienDo": "🟢 Hoàn thành",
+        "chiTiet": "gặp partner với anh Phát để share các giải pháp của PMAX, catchup lại sau hơn 1 năm làm chung case cũ",
+        "nextStep": "gửi lại các giải pháp CFP và MMM cho partner, tạo group với anh Việt Anh để trao đổi thêm thông tin và process các giấy tờ",
+        "link": ""
+      },
+      {
+        "tenTask": "Call Ford để xin số SDT của MKT Manager",
+        "pic": "Minh Thư",
+        "tienDo": "🟡 Đang làm — 50%",
+        "chiTiet": "đang collect thông tin và double check lại với anh Sơn trước khi call KH",
+        "nextStep": "mai 21.05 sẽ call KH để trao đổi thêm thông tin",
+        "link": ""
+      },
+      {
+        "tenTask": "Process NDA với LiveSpo Pharma",
+        "pic": "Minh Thư",
+        "tienDo": "🟡 Đang làm — 50%",
+        "chiTiet": "đang đợi legal review và feedback cho NDA",
+        "nextStep": "ngày mai (21.05) cần push legal phản hồi sớm để take brief từ KH",
+        "link": ""
+      }
+    ],
+    "submitted": "2026-05-20T11:05:34.817Z"
+  },
+  {
     "id": 19,
     "date": "2026-05-20",
     "team": "partnership",
