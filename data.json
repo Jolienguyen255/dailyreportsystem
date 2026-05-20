@@ -1,5 +1,38 @@
 [
   {
+    "id": 19,
+    "date": "2026-05-20",
+    "team": "partnership",
+    "author": "Gia Bảo",
+    "tasks": [
+      {
+        "tenTask": "Partnership MOU (WOW & SUDEST)",
+        "pic": "Gia Bảo",
+        "tienDo": "🟠 Chờ phản hồi",
+        "chiTiet": "Đã done trình ký, hiện đang chờ đóng mộc",
+        "nextStep": "T5 (21.5): gửi bản cứng cho đối tác",
+        "link": ""
+      },
+      {
+        "tenTask": "Take brief Huy Thanh Jewelry - Chiến dịch viral social 2026",
+        "pic": "Gia Bảo",
+        "tienDo": "🟠 Chờ phản hồi",
+        "chiTiet": "Done debrief với KH. Đang chờ internal team confirm qualify brief",
+        "nextStep": "T5 (21.5) Chase anh Duy để qualify brief + tạo internal space với team + KH",
+        "link": ""
+      },
+      {
+        "tenTask": "Take brief VNPT",
+        "pic": "Gia Bảo",
+        "tienDo": "🟡 Đang làm — 25%",
+        "chiTiet": "Done Legal review NDA & đang trong quá trình soạn Credential deck",
+        "nextStep": "T5 (21.5): Gửi NDA cho KH. Finalize Credential với anh Sơn & anh Cường để send out cho KH",
+        "link": ""
+      }
+    ],
+    "submitted": "2026-05-20T11:03:29.990Z"
+  },
+  {
     "id": 18,
     "date": "2026-05-19",
     "team": "partnership",
